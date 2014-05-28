@@ -8,33 +8,10 @@
     <link href="styles/android.css" rel="stylesheet" />
     <link href="styles/ios.css" rel="stylesheet" />
     
-	<link href="jquery-mobile/jquery.mobile.structure-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.structure-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.theme-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.theme-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.structure-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.structure-1.4.2.min.css" rel="stylesheet"/>
-    
-    <link href="jquery-mobile/jquery.mobile.external-png-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.external-png-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.icons-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.icons-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.inline-png-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.inline-png-1.4.2.min.css" rel="stylesheet"/>
-    
-    <link href="jquery-mobile/jquery.mobile.inline-svg-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.inline-svg-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.icons-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile-1.4.2.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile-1.4.2.min.css" rel="stylesheet"/>
-    <link href="jquery-mobile/jquery.mobile.inline-png-1.4.2.min.css" rel="stylesheet"/>
-
-    <script src="jquery-mobile/jquery.mobile-1.4.2.js"></script>
-    <script src="jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-    <script src="scripts/app.js"></script>
+    
 </head>
 <body>
     <!-- Main Layout -->
@@ -56,29 +33,63 @@
             </div>
         </div>
     </div>
-	<!-- TableInformation View -->
-    <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
+    <!-- Login ModalView -->
+    <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Chọn loại khách</span>
+                
+            </div>
+        </div>
         
         <ul data-role="listview" data-style="inset">
             <li>
-                <label>Label
+                <label>Nam
+                    
+                    <input type="number" value="0" />
+                </label>
+            </li>
+            <li>
+                <label>Nữ
+                    
+                    <input type="number" value="0" />
+                </label>
+            </li>
+            <li>
+                <label>Trẻ em
+                    
+                    <input type="number" value="0" />
+                </label>
+            </li>
+        </ul>
+        
+        <a id="Đồng ý" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
+        <a id="Hủy" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
+    </div>
+	<!-- TableInformation View -->
+    <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
+        <div>
+             <label>Số lượng khách</label>
+             <input type="text" value="***"/>
+            <img data-role="button" src="styles/images/arrow-down.png" alt="" width="30" height="30" href="#modalguestquantity" data-rel="modalview">
+        </div>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>Mã thẻ vip
+                    <input type="text" value="***" />
                 </label>
             </li>
         </ul>
         <ul data-role="listview" data-style="inset">
             <li>
-                <label>Label
-                    <input type="text" value="Text" />
+                <label>Nhóm Khách hàng
+                    <input type="text" value="***" />
                 </label>
             </li>
         </ul>
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Label
-                    <input type="text" value="Text" />
-                </label>
-            </li>
-        </ul>
+        <center>
+        	<img src="styles/images/money.png" alt="Smiley face" width="200" height="200">
+        </center>
     </div>
     
     <!-- Notification View -->
