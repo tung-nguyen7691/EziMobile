@@ -1,23 +1,19 @@
-(function (global) {
-    var app = global.app = global.app || {};
+document.addEventListener('deviceready', function() {
+    $("#login").kendoMobileModalView("open");
+    /*var name = $('#name').val();*/
+});
 
-    document.addEventListener('deviceready', function () {
-        navigator.splashscreen.hide();
+function closeModalViewLogin() {
+    /*jQuery.ajax({
+        url: 'http://localhost:46241/WebService1.asmx/HelloWorld',
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            alert(JSON.stringify(data));
+        }
+    });*/
+    $("#login").kendoMobileModalView("close");
+}
 
-        app.changeSkin = function (e) {
-            var mobileSkin = "";
-
-            if (e.sender.element.text() === "Flat") {
-                e.sender.element.text("Native");
-                mobileSkin = "flat";
-            } else {
-                e.sender.element.text("Flat");
-                mobileSkin = "";
-            }
-
-            app.application.skin(mobileSkin);
-        };
-
-        app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" });
-    }, false);
-})(window);
+var app = new kendo.mobile.Application();

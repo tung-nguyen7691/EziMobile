@@ -1,0 +1,17 @@
+/*Android*/
+.km-android .mainButton {
+    width: 23%;
+    height: 90px;
+    border: none;
+    background: none;
+    color: Black;
+}
+
+/*Tablet*/
+.km-tablet .mainButton {
+    width: 27%;
+    height: 90px;
+    border: none;
+    background: none;
+    color: Black;
+}
