@@ -14,6 +14,7 @@ function closeModalViewLogin() {
         }
     });*/
     $("#login").kendoMobileModalView("close");
+    
 }
 
 var app = new kendo.mobile.Application();
