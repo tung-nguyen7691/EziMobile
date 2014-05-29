@@ -6,7 +6,12 @@
     background: none;
     color: Black;
 }
-
+.km-android .inputGuestQuantity{
+    float: left;
+}
+.km-android .btnGuestQuantity{
+    float: right;
+}
 /*Tablet*/
 .km-tablet .mainButton {
     width: 27%;

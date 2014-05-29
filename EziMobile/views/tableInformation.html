@@ -4,7 +4,6 @@
     <title>EziMobile</title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="styles/tableInformation.css" rel="stylesheet" />
     <link href="styles/android.css" rel="stylesheet" />
     <link href="styles/ios.css" rel="stylesheet" />
     
@@ -63,15 +62,15 @@
             </li>
         </ul>
         
-        <a id="Đồng ý" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
-        <a id="Hủy" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
+        <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
+        <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
     </div>
 	<!-- TableInformation View -->
     <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
-        <div>
-             <label>Số lượng khách</label>
-             <input type="text" value="***"/>
-            <img data-role="button" src="styles/images/arrow-down.jpg" alt="" width="30" height="30" href="#modalguestquantity" data-rel="modalview">
+        <div id="questQuantity">
+             <label>Số lượng khách:</label>
+             <input type="text" value="" class="inputGuestQuantity"/>
+            <img src="styles/images/arrow-down.jpg" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
         </div>
         <ul data-role="listview" data-style="inset">
             <li>
@@ -88,7 +87,7 @@
             </li>
         </ul>
         <center>
-        	<img src="styles/images/money.png" alt="Smiley face" width="200" height="200">
+        	<img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
         </center>
     </div>
     
