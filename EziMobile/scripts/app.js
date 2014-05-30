@@ -80,6 +80,8 @@ function btnLoginClick() {
                    var isError = data.d.isError;
                    if (result){
                        _userId = data.d.UserID;
+                       _langId = langID;
+                       _orgId = BranchID;
                        $("#modalLogin").kendoMobileModalView("close");
                    }
                    else if(isError){
