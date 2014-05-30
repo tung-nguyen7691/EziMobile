@@ -1,0 +1,22 @@
+/*Android*/
+.km-android .mainButton {
+    width: 23%;
+    height: 90px;
+    border: none;
+    background: none;
+    color: Black;
+}
+.km-android .inputGuestQuantity{
+    float: left;
+}
+.km-android .btnGuestQuantity{
+    float: right;
+}
+/*Tablet*/
+.km-tablet .mainButton {
+    width: 27%;
+    height: 90px;
+    border: none;
+    background: none;
+    color: Black;
+}

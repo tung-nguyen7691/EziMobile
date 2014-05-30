@@ -1,0 +1,27 @@
+#viewTableInformation .km-content{
+    background: #b1e6e5;
+    padding: 10px;
+}
+#questQuantity{
+    margin: 5px 5px 5px 15px;
+}
+label{
+    color:Black;
+}
+input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+}
+#questQuantity .inputGuestQuantity{
+    width: 130px;
+    height: auto;
+    float: none;
+}
+#questQuantity .btnGuestQuantity{
+    width: 25px;
+    height: 25px;
+    float: right;
+}
