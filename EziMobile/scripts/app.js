@@ -43,10 +43,10 @@ function branchDropDownInit() {
                    var result = JSON.parse(data.d.Result);
                    if (result.LANGUAGE !== null) {
                        $("#dropdownLanguage").kendoDropDownList({
-                                                                    dataTextField: "LANG_NAME",
-                                                                    dataValueField: "LANG_AUTOID",
-                                                                    dataSource: result.LANGUAGE
-                                                                });
+                                                                  dataTextField: "LANG_NAME",
+                                                                  dataValueField: "LANG_AUTOID",
+                                                                  dataSource: result.LANGUAGE
+                                                              });
                    } else
                        alert("Load Data Failed");
                }
@@ -78,10 +78,11 @@ function btnLoginClick() {
                success: function(data) {
                    var result = data.d.LoginResult;
                    var isError = data.d.isError;
-                   if (result) {
+                   if (result){
                        _userId = data.d.UserID;
                        $("#modalLogin").kendoMobileModalView("close");
-                   } else if (isError) {
+                   }
+                   else if(isError){
                        alert(data.d.ErrorMessage);
                    }
                }
@@ -91,9 +92,9 @@ function btnLoginClick() {
 function btnConfigClick() {
     $("#listLoginOption").toggle("slow");
     if (bLoginConfigVisible) {
-        $("#modalLogin").animate({height: "-=120px"}, 1000);
+        $("#modalLogin").height(280);
     } else {
-        $("#modalLogin").animate({height: "+=120px"}, 1000);
+        $("#modalLogin").height(400);
     }
     bLoginConfigVisible = !bLoginConfigVisible;
 }
