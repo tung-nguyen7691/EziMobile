@@ -1,4 +1,4 @@
-#viewGetGroup .km-content{
+#viewDetailFood .km-content{
     background: #b1e6e5;
     padding: 10px;
 }
@@ -24,3 +24,4 @@ textarea:focus, input:focus {
   font-weight: 700;
   src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
 }
+
