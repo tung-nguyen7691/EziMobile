@@ -6,10 +6,8 @@
     
     <!--Kendo Requirements-->
     <!-- CSS -->
-    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
-    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
-    <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet" />
-    <link href="kendo/styles/kendo.dataviz.default.min.css" rel="stylesheet" />
+    
+    
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
     <!-- JS -->
@@ -68,7 +66,7 @@
         </ul>
     </div>
     
-    <!---------------------------- Login ModalView -->
+    <!-- Login ModalView -->
     <div id="modalLogin" data-role="modalview" data-width="85%" data-height="400px">
         <div data-role="header">
             <div data-role="navbar">
@@ -80,17 +78,17 @@
         <ul data-role="listview">
             <li>
                 <label>Username
-                    <input type="text" value="Username" />
+                    <input id="txtUsername" type="text" value="Username" />
                 </label>
             </li>
             <li>
                 <label>Password
-                    <input type="password" value="Password" />
+                    <input id="txtPassword" type="password" value="Password" />
                 </label>
             </li>
         </ul>
         
-        <a id="btnLogin" data-role="button" href="" data-click="closeModalViewLogin">Login</a>
+        <a id="btnLogin" data-role="button" href="" data-click="btnLoginClick">Login</a>
         <a id="btnConfig" data-role="button" href="" data-click="btnConfigClick">Option</a>
         
         <ul id="listLoginOption" data-role="listview">

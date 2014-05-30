@@ -53,11 +53,18 @@ function branchDropDownInit() {
            })
 }
 
-function loginClick() {
-    var name = $('#txtUsername').val();
-    var pass = $('#txtPassword').val();
+function btnLoginClick() {
+    var UserName = $('#txtUsername').val();
+    var PassWord = $('#txtPassword').val();
+    var BranchID = $("#dropdownBranch").val();
+    var langID = $("#dropdownLanguage").val();
     
-    var loginObj = { UserName: name, PassWord: pass};
+    var loginObj = { 
+        UserName: UserName, 
+        PassWord: PassWord,
+        BranchID: BranchID,
+        langID: langID
+    };
     
     $.ajax({
                url: _webServicePath + 'Login',
@@ -69,11 +76,15 @@ function loginClick() {
                    alert("Login Failed");
                },
                success: function(data) {
-                   var result = JSON.parse(data.d.Result);
-                   if (result.result)
+                   var result = data.d.LoginResult;
+                   var isError = data.d.isError;
+                   if (result){
+                       _userId = data.d.UserID;
                        $("#modalLogin").kendoMobileModalView("close");
-                   else
-                       alert("Login Failed");
+                   }
+                   else if(isError){
+                       alert(data.d.ErrorMessage);
+                   }
                }
            })
 }
