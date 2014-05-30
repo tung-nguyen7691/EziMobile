@@ -1,2 +1,2 @@
-var _webServicePath = "http://localhost:8989/TranferData/MobileService.asmx/";
+var _webServicePath = "http://vnyi-tung:8003/TranferData/MobileService.asmx/";
 var _userId;
