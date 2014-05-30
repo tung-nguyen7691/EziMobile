@@ -1,279 +1,153 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>EziMobile</title>
-    <meta charset="utf-8" />
-    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="styles/android.css" rel="stylesheet" />
-    <link href="styles/ios.css" rel="stylesheet" />
-    
-    <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
-    
-</head>
-<body>
-    <!-- Main Layout -->
-    <div data-id="layoutMain" data-role="layout">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span data-role="view-title">EziMobile</span>
-                <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
-                <a data-role="backbutton" data-align="left">Back</a>
+    <head>
+        <title>EziMobile</title>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/android.css" rel="stylesheet" />
+        <link href="styles/ios.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+
+    </head>
+    <body>
+        <!-- Main Layout -->
+        <div data-id="layoutMain" data-role="layout">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title">EziMobile</span>
+                    <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
+                    <a data-role="backbutton" data-align="left">Back</a>
+                </div>
+            </div>
+
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a data-icon="home" href="#viewHome">Home</a>
+                    <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
+                    <a data-role="button" data-icon="globe">Notifications</a>
+                    <a data-role="button" data-icon="contacts">Message</a>
+                </div>
             </div>
         </div>
-        
-        <div data-role="footer">
-            <div data-role="tabstrip">
-                <a data-icon="home" href="#viewHome">Home</a>
-                <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
-                <a data-role="button" data-icon="globe">Notifications</a>
-                <a data-role="button" data-icon="contacts">Message</a>
+        <!-- TableInformation View -->
+        <div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
+            <div>
+                <label>Bàn</label>
+            </div>
+            <div id="example">
+
+                <div id="listView"></div>
+                <div id="pager" class="k-pager-wrap"></div>
+
+                <script type="text/x-kendo-template" id="template">
+                    <div class="product">
+                        <img src="styles/images/#= ProductID #.jpg" alt="#: ProductName # image" />
+                        <h3>#:ProductName#</h3>
+                        <p>#:kendo.toString(UnitPrice, "c")#</p>
+                    </div>
+                </script>
+
+                <script>
+                    $(function() {
+                        var dataSource = new kendo.data.DataSource({
+                                                                       data: products,
+                                                                       pageSize: 21
+                                                                   });
+
+                        $("#pager").kendoPager({
+                                                   dataSource: dataSource
+                                               });
+
+                        $("#listView").kendoListView({
+                                                         dataSource: dataSource,
+                                                         template: kendo.template($("#template").html())
+                                                     });
+                    });
+                </script>
+
+                <style scoped>
+                    .demo-section
+                    {
+                        width: 860px;
+                        margin: 20px auto;
+                        border: 0;
+                        background: none;
+                    }
+                    #listView
+                    {
+                        padding: 10px 5px;
+                        margin-bottom: -1px;
+                        min-height: 510px;
+                    }
+                    .product
+                    {
+                        float: left;
+                        position: relative;
+                        width: 111px;
+                        height: 170px;
+                        margin: 0 5px;
+                        padding: 0;
+                    }
+                    .product img
+                    {
+                        width: 110px;
+                        height: 110px;
+                    }
+                    .product h3
+                    {
+                        margin: 0;
+                        padding: 3px 5px 0 0;
+                        max-width: 96px;
+                        overflow: hidden;
+                        line-height: 1.1em;
+                        font-size: .9em;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        color: #999;
+                    }
+                    .product p
+                    {
+                        visibility: hidden;
+                    }
+                    .product:hover p
+                    {
+                        visibility: visible;
+                        position: absolute;
+                        width: 110px;
+                        height: 110px;
+                        top: 0;
+                        margin: 0;
+                        padding: 0;
+                        line-height: 110px;
+                        vertical-align: middle;
+                        text-align: center;
+                        color: #fff;
+                        background-color: rgba(0, 0, 0, 0.75);
+                        transition: background .2s linear, color .2s linear;
+                        -moz-transition: background .2s linear, color .2s linear;
+                        -webkit-transition: background .2s linear, color .2s linear;
+                        -o-transition: background .2s linear, color .2s linear;
+                    }
+                    .k-listview:after
+                    {
+                        content: ".";
+                        display: block;
+                        height: 0;
+                        clear: both;
+                        visibility: hidden;
+                    }
+                </style>
             </div>
         </div>
-    </div>
-    <!-- Login ModalView -->
-    <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span>Chọn loại khách</span>
-                
-            </div>
+        <!-- Notification View -->
+        <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
+
         </div>
-        
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Nam
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-            <li>
-                <label>Nữ
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-            <li>
-                <label>Trẻ em
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-        </ul>
-        
-        <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
-        <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
-    </div>
-	<!-- TableInformation View -->
-    <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
-        <div><label>Bàn</label></div>
-        <div id="listView" data-role="listview" class="k-widget k-listview" role="listbox">
-        <div class="product" data-uid="e1509afe-ae95-40e8-a767-de7d085eae68" role="option" aria-selected="false">
-            <img src="styles/images/1.jpg" alt="Chai image">
-            <h3>Chai</h3>
-            <p>$18.00</p>
+        <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
+
         </div>
-    	
-        <div class="product" data-uid="84ca3c7d-e746-4c47-807f-ce64327544f0" role="option" aria-selected="false">
-            <img src="styles/images/2.jpg" alt="Chang image">
-            <h3>Chang</h3>
-            <p>$19.00</p>
-        </div>
-    
-        <div class="product" data-uid="df244bf9-fbba-497f-ae31-d1ac6eee7e7f" role="option" aria-selected="false">
-            <img src="styles/images/3.jpg" alt="Aniseed Syrup image">
-            <h3>Aniseed Syrup</h3>
-            <p>$10.00</p>
-        </div>
-    
-        <div class="product" data-uid="a658cabb-ff33-40ff-9a14-f9489d34e777" role="option" aria-selected="false">
-            <img src="styles/images/4.jpg" alt="Chef Anton's Cajun Seasoning image">
-            <h3>Chef Anton's Cajun Seasoning</h3>
-            <p>$22.00</p>
-        </div>
-    
-        <div class="product" data-uid="3512d579-3266-42fe-9046-76814402cf55" role="option" aria-selected="false">
-            <img src="styles/images/5.jpg" alt="Chef Anton's Gumbo Mix image">
-            <h3>Chef Anton's Gumbo Mix</h3>
-            <p>$21.35</p>
-        </div>
-    
-        <div class="product" data-uid="7e4dcf4d-952b-420b-8fe6-0e4c36449c7b" role="option" aria-selected="false">
-            <img src="styles/images/6.jpg" alt="Grandma's Boysenberry Spread image">
-            <h3>Grandma's Boysenberry Spread</h3>
-            <p>$25.00</p>
-        </div>
-    
-        <div class="product" data-uid="7ba017a8-9256-4dd6-8356-6582ae793cff" role="option" aria-selected="false">
-            <img src="styles/images/7.jpg" alt="Uncle Bob's Organic Dried Pears image">
-            <h3>Uncle Bob's Organic Dried Pears</h3>
-            <p>$30.00</p>
-        </div>
-    
-        <div class="product" data-uid="ce2db21b-5752-4c63-b8af-28909871dca0" role="option" aria-selected="false">
-            <img src="styles/images/8.jpg" alt="Northwoods Cranberry Sauce image">
-            <h3>Northwoods Cranberry Sauce</h3>
-            <p>$40.00</p>
-        </div>
-    
-        <div class="product" data-uid="b4799ee0-d081-4937-8788-1a992b710d2c" role="option" aria-selected="false">
-            <img src="styles/images/9.jpg" alt="Mishi Kobe Niku image">
-            <h3>Mishi Kobe Niku</h3>
-            <p>$97.00</p>
-        </div>
-    
-        <div class="product" data-uid="9854cb24-8cd3-4b11-a967-da1bfce8e351" role="option" aria-selected="false">
-            <img src="styles/images/10.jpg" alt="Ikura image">
-            <h3>Ikura</h3>
-            <p>$31.00</p>
-        </div>
-    
-        <div class="product" data-uid="70fcb746-5b0a-4880-bc5c-91e78aac8b9d" role="option" aria-selected="false">
-            <img src="styles/images/11.jpg" alt="Queso Cabrales image">
-            <h3>Queso Cabrales</h3>
-            <p>$21.00</p>
-        </div>
-    
-        <div class="product" data-uid="d2d1654a-ac74-46b5-9c6d-a3f479243001" role="option" aria-selected="false">
-            <img src="styles/images/12.jpg" alt="Queso Manchego La Pastora image">
-            <h3>Queso Manchego La Pastora</h3>
-            <p>$38.00</p>
-        </div>
-    
-        <div class="product" data-uid="94fec31a-2c9a-40e3-96ee-c028b1ffbbda" role="option" aria-selected="false">
-            <img src="styles/images/13.jpg" alt="Konbu image">
-            <h3>Konbu</h3>
-            <p>$6.00</p>
-        </div>
-    
-        <div class="product" data-uid="4a48dcec-ccf2-4ea3-9799-36738f7b97ff" role="option" aria-selected="false">
-            <img src="styles/images/14.jpg" alt="Tofu image">
-            <h3>Tofu</h3>
-            <p>$23.25</p>
-        </div>
-    
-        <div class="product" data-uid="44285bc9-0e21-4d20-b6be-8ed4146d9540" role="option" aria-selected="false">
-            <img src="styles/images/15.jpg" alt="Genen Shouyu image">
-            <h3>Genen Shouyu</h3>
-            <p>$15.50</p>
-        </div>
-    
-        <div class="product" data-uid="4acc7f26-23e4-40d0-af99-1c0b3f317840" role="option" aria-selected="false">
-            <img src="styles/images/16.jpg" alt="Pavlova image">
-            <h3>Pavlova</h3>
-            <p>$17.45</p>
-        </div>
-    
-        <div class="product" data-uid="a0a38697-d3d1-4e82-97e4-cb5cedd453d7" role="option" aria-selected="false">
-            <img src="styles/images/17.jpg" alt="Alice Mutton image">
-            <h3>Alice Mutton</h3>
-            <p>$39.00</p>
-        </div>
-    
-        <div class="product" data-uid="04e0c62e-72ed-4244-952d-292d9025c204" role="option" aria-selected="false">
-            <img src="styles/images/18.jpg" alt="Carnarvon Tigers image">
-            <h3>Carnarvon Tigers</h3>
-            <p>$62.50</p>
-        </div>
-    
-        <div class="product" data-uid="5b6f6191-8e84-45c9-a231-185bbcf72554" role="option" aria-selected="false">
-            <img src="styles/images/19.jpg" alt="Teatime Chocolate Biscuits image">
-            <h3>Teatime Chocolate Biscuits</h3>
-            <p>$9.20</p>
-        </div>
-    
-        <div class="product" data-uid="ea01619e-b2a7-4fa7-ab9b-b66a62fb81e4" role="option" aria-selected="false">
-            <img src="styles/images/20.jpg" alt="Sir Rodney's Marmalade image">
-            <h3>Sir Rodney's Marmalade</h3>
-            <p>$81.00</p>
-        </div>
-    
-        <div class="product" data-uid="96fdc359-07c9-446b-b48e-185cea5b84c6" role="option" aria-selected="false">
-            <img src="styles/images/21.jpg" alt="Sir Rodney's Scones image">
-            <h3>Sir Rodney's Scones</h3>
-            <p>$10.00</p>
-        </div>
-      </div>      
-    </div>
-    <script type="text/x-kendo-template" id="template">
-        <div class="product">
-            <img src="styles/images/#= ProductID #.jpg" alt="#: ProductName # image" />
-            <h3>#:ProductName#</h3>
-            <p>#:kendo.toString(UnitPrice, "c")#</p>
-        </div>
-    </script>
-    <style scoped="">
-                .demo-section {
-                width: 860px;
-                margin: 20px auto;
-                border: 0;
-                background: none;
-            }
-        #listView {
-            padding: 10px 5px;
-            margin-bottom: -1px;
-            min-height: 510px;
-        }
-        .product {
-            float: left;
-            position: relative;
-            width: 131px;
-            height: 190px;
-            margin: 0 5px;
-            padding: 0;
-        }
-        .product img {
-            width: 130px;
-            height: 130px;
-        }
-        .product h3 {
-            margin: 0;
-            padding: 3px 5px 0 0;
-            max-width: 96px;
-            overflow: hidden;
-            line-height: 1.1em;
-            font-size: .9em;
-            font-weight: normal;
-            text-transform: uppercase;
-            color: #999;
-        }
-        .product p {
-            visibility: hidden;
-        }
-        .product:hover p {
-            visibility: visible;
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            top: 0;
-            margin: 0;
-            padding: 0;
-            line-height: 110px;
-            vertical-align: middle;
-            text-align: center;
-            color: #fff;
-            background-color: rgba(0,0,0,0.75);
-            transition: background .2s linear, color .2s linear;
-            -moz-transition: background .2s linear, color .2s linear;
-            -webkit-transition: background .2s linear, color .2s linear;
-            -o-transition: background .2s linear, color .2s linear;
-        }
-        .k-listview:after {
-            content: ".";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
-        }
-    </style>
-    
-    <!-- Notification View -->
-    <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
-        
-    </div>
-    <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
-        
-    </div>
-</body>
+    </body>
 </html>
