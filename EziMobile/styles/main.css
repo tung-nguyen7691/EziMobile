@@ -3,8 +3,8 @@
     height: 48px;
 }
 
-#login-submit,
-#login-register {
+#btnLogin,
+#btnConfig {
     display: block;
     text-align: center;
     margin: .6em .8em;

@@ -2,16 +2,7 @@
     background: #b1e6e5;
     padding: 10px;
 }
-label{
-    color:Black;
-}
-input, select, textarea{
-    color: #ff0000;
-}
 
-textarea:focus, input:focus {
-    color: #ff0000;
-}
 @font-face {
   font-family: 'Droid Sans';
   font-style: normal;
