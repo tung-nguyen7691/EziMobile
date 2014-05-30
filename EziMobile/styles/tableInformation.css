@@ -5,8 +5,11 @@
 #questQuantity{
     margin: 5px 5px 5px 15px;
 }
-label{
+#modalguestquantity label{
     color:Black;
+}
+#viewTableInformation label{
+    color: Black;
 }
 #modalguestquantity input, select, textarea{
     color: #ff0000 !important;
