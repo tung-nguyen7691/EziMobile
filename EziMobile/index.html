@@ -4,17 +4,22 @@
     <title>EziMobile</title>
     <meta charset="utf-8" />
     <!--Kendo Requirements-->
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.default.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
     <!--App Css and JS-->
     <link href="styles/main.css" rel="stylesheet" />
     <link href="styles/dineIn.css" rel="stylesheet" />
     <link href="styles/tableInformation.css" rel="stylesheet" />
     <script src="scripts/app.js"></script>
     <script src="scripts/dineIn.js"></script>
+    <script src="scripts/tableInformation.js"></script>
     <!--Plugin -->
 </head>
 <body>
@@ -30,7 +35,7 @@
         
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a data-icon="home" href="#viewHome">Home</a>
+                <a data-icon="home" href="#RES_frmChooseFunctions">Home</a>
                 <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
                 <a data-role="button" data-icon="globe">Notifications</a>
                 <a data-role="button" data-icon="contacts">Message</a>
@@ -78,10 +83,10 @@
         <a id="login-register" data-role="button" href="">Register</a>
     </div>
 	<!-- Home View -->
-    <div id="viewHome" data-role="view" data-layout="layoutMain" data-title="Home">
+    <div id="RES_frmChooseFunctions" data-role="view" data-layout="layoutMain" data-title="Home">
         <div id="main">
             
-            <a class="mainButton" data-role="button">
+            <a id="btnDineIn" class="mainButton" data-role="button" href="views/dineIn.html">
                 <center><img src="styles/images/keyboard.png"><br>
                 Mở bàn</center>
             </a>

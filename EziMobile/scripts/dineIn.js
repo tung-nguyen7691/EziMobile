@@ -30,3 +30,4 @@ var templateArea = kendo.template(
 	'<a class="itemAreaDetail">'+
         '<strong>#: REA_NAME #</strong>'+
     '</a>');
+
