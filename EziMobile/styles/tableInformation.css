@@ -25,3 +25,10 @@ textarea:focus, input:focus {
     height: 25px;
     float: right;
 }
+
+.km-android .inputGuestQuantity{
+    float: left;
+}
+.km-android .btnGuestQuantity{
+    float: right;
+}

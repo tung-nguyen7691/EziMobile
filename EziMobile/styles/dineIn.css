@@ -1,0 +1,9 @@
+.itemAreaDetail {
+    position: relative;
+    width: 200px;
+    margin-bottom: 20px;
+    padding-bottom: 62px;
+    background: #fff url('images/item-separator.png') repeat-y right top;
+    text-align: center;
+    float:left;
+}
