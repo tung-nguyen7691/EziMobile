@@ -1,184 +1,219 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>EziMobile</title>
-    <meta charset="utf-8" />
-    
-    <!--Kendo Requirements-->
-    <!-- CSS -->
-    
-    
-    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
-    <!-- JS -->
-    <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.all.min.js"></script>
-    <script src="kendo/js/kendo.timezones.min.js"></script>
-    <script src="kendo/js/kendo-dojo.js"></script>
-    
-    <!--App Css and JS-->
-    <link href="styles/main.css" rel="stylesheet" />
-    <link href="styles/dineIn.css" rel="stylesheet" />
-    <link href="styles/tableInformation.css" rel="stylesheet" />
-    <link href="styles/getGroupFood.css" rel="stylesheet" />
-    <link href="styles/detailFood.css" rel="stylesheet" />
-    
-    <script src="scripts/global.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/dineIn.js"></script>
-    <script src="scripts/tableInformation.js"></script>
-    <script src="scripts/products.js"></script>
-    <script src="scripts/tableInformation.js"></script>
-    <script src="scripts/sushi.js"></script>
-    
-    <!--Plugin -->
-</head>
-<body>
-    
-    <!-- Main Layout -->
-    <div data-id="layoutMain" data-role="layout">
-        <div data-role="header">
-            <div data-role="navbar">
-                
-                <span data-role="view-title">EziMobile</span>
-                
-                <a data-role="backbutton" data-align="left">Back</a>
+    <head>
+        <title>EziMobile</title>
+        <meta charset="utf-8" />
+
+        <!--Kendo Requirements-->
+        <!-- CSS -->
+
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="http://demos.telerik.com/kendo-ui/content/spa/websushi/css/style.css">
+
+        <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.common.min.css" rel="stylesheet">
+        <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.rtl.min.css" rel="stylesheet">
+        <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.metro.min.css" rel="stylesheet">
+        <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.dataviz.min.css" rel="stylesheet">
+        <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.dataviz.metro.min.css" rel="stylesheet">
+
+        <script>
+            window.contentPath = '/kendo-ui/content/spa/websushi';
+        </script>
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.all.min.js"></script>
+        <script src="kendo/js/kendo.timezones.min.js"></script>
+        <script src="kendo/js/kendo-dojo.js"></script>
+
+        <!--App Css and JS-->
+        <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/dineIn.css" rel="stylesheet" />
+        <link href="styles/tableInformation.css" rel="stylesheet" />
+        <link href="styles/getGroupFood.css" rel="stylesheet" />
+        <link href="styles/detailFood.css" rel="stylesheet" />
+
+        <script src="scripts/global.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/dineIn.js"></script>
+        <script src="scripts/tableInformation.js"></script>
+        <script src="scripts/products.js"></script>
+        <script src="scripts/tableInformation.js"></script>
+        <script src="scripts/sushi.js"></script>
+
+        <!--Plugin -->
+    </head>
+    <body>
+
+        <!-- Main Layout -->
+        <div data-id="layoutMain" data-role="layout">
+            <div data-role="header">
+                <div data-role="navbar">
+
+                    <span data-role="view-title">EziMobile</span>
+
+                    <a data-role="backbutton" data-align="left">Back</a>
+                </div>
+            </div>
+
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a data-icon="home" href="#RES_frmChooseFunctions">Home</a>
+                    <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
+                    <a data-role="button" data-icon="globe">Notifications</a>
+                    <a data-role="button" data-icon="contacts">Message</a>
+                </div>
             </div>
         </div>
-        
-        <div data-role="footer">
-            <div data-role="tabstrip">
-                <a data-icon="home" href="#RES_frmChooseFunctions">Home</a>
-                <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
-                <a data-role="button" data-icon="globe">Notifications</a>
-                <a data-role="button" data-icon="contacts">Message</a>
-            </div>
+
+        <!-- Drawer -->
+        <div id="drawSide" data-role="drawer" data-views="" data-position="right">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Fullname
+                        <input type="text" value="Text" />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Username
+                        <input type="text" value="Text" />
+                    </label>
+                </li>
+            </ul>
         </div>
-    </div>
-    
-    <!-- Drawer -->
-    <div id="drawSide" data-role="drawer" data-views="" data-position="right">
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Fullname
-                    <input type="text" value="Text" />
-                </label>
-            </li>
-            <li>
-                <label>Username
-                    <input type="text" value="Text" />
-                </label>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- Login ModalView -->
-    <div id="modalLogin" data-role="modalview" data-width="85%" data-height="400px">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span>Login</span>
-                
+
+        <!-- Login ModalView -->
+        <div id="modalLogin" data-role="modalview" data-width="85%" data-height="400px">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span>Login</span>
+
+                </div>
             </div>
+
+            <ul data-role="listview">
+                <li>
+                    <label>
+                        Username
+                        <input id="txtUsername" type="text" value="Username" />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Password
+                        <input id="txtPassword" type="password" value="Password" />
+                    </label>
+                </li>
+            </ul>
+
+            <a id="btnLogin" data-role="button" href="" data-click="btnLoginClick">Login</a>
+            <a id="btnConfig" data-role="button" href="" data-click="btnConfigClick">Option</a>
+
+            <ul id="listLoginOption" data-role="listview">
+                <li>
+                    <label>
+                        Branch
+                        <input id="dropdownBranch" />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Language
+                        <select id="dropdownLanguage"></select>
+                    </label>
+                </li>
+            </ul>
         </div>
-        
-        <ul data-role="listview">
-            <li>
-                <label>Username
-                    <input id="txtUsername" type="text" value="Username" />
-                </label>
-            </li>
-            <li>
-                <label>Password
-                    <input id="txtPassword" type="password" value="Password" />
-                </label>
-            </li>
-        </ul>
-        
-        <a id="btnLogin" data-role="button" href="" data-click="btnLoginClick">Login</a>
-        <a id="btnConfig" data-role="button" href="" data-click="btnConfigClick">Option</a>
-        
-        <ul id="listLoginOption" data-role="listview">
-            <li>
-                <label>Branch
-                    <input id="dropdownBranch" />
-                </label>
-            </li>
-            <li>
-                <label>Language
-                    <select id="dropdownLanguage"></select>
-                </label>
-            </li>
-        </ul>
-    </div>
-    
-	<!-- Home View -->
-    <div id="RES_frmChooseFunctions" data-role="view" data-layout="layoutMain" data-title="Home">
-        <div id="main">
-            
-            <a id="btnDineIn" class="mainButton" data-role="button" href="views/dineIn.html">
-                <center><img src="styles/images/keyboard.png"><br>
-                Mở bàn</center>
-            </a>
-            <a class="mainButton" data-role="button" href="views/tableInformation.html">
-                <center><img src="styles/images/people.png"><br>
-                Thêm món</center>
-            </a>
-            <a class="mainButton" data-role="button" href="views/getGroupFood.html">
-                <center><img src="styles/images/money.png"><br>
-                Takeaway</center>
-            </a>
-            <a class="mainButton" data-role="button" href="views/detailFood.html">
-                <center><img src="styles/images/page.png"><br>
-                Chuyển bàn</center>
-            </a>
+
+        <!-- Home View -->
+        <div id="RES_frmChooseFunctions" data-role="view" data-layout="layoutMain" data-title="Home">
+            <div id="main">
+
+                <a id="btnDineIn" class="mainButton" data-role="button" href="views/dineIn.html">
+                    <center>
+                        <img src="styles/images/keyboard.png"><br>
+                        Mở bàn
+                    </center>
+                </a>
+                <a class="mainButton" data-role="button" href="views/tableInformation.html">
+                    <center>
+                        <img src="styles/images/people.png"><br>
+                        Thêm món
+                    </center>
+                </a>
+                <a class="mainButton" data-role="button" href="views/getGroupFood.html">
+                    <center>
+                        <img src="styles/images/money.png"><br>
+                        Takeaway
+                    </center>
+                </a>
+                <a class="mainButton" data-role="button" href="views/detailFood.html">
+                    <center>
+                        <img src="styles/images/page.png"><br>
+                        Chuyển bàn
+                    </center>
+                </a>
                 <a class="mainButton" data-role="button" href="">
-                <center><img src="styles/images/forkAndKnife.png"><br>
-                Tách bàn</center>
-            </a>
+                    <center>
+                        <img src="styles/images/forkAndKnife.png"><br>
+                        Tách bàn
+                    </center>
+                </a>
                 <a class="mainButton" data-role="button" href="">
-                <center><img src="styles/images/people.png"><br>
-                Ghép bàn</center>
-            </a>
-        	
-            <a class="mainButton" data-role="button" href="#message">
-                <center><img src="styles/images/icons/mail1.png"><br>
-                Tin nhắn</center>
-            </a>
+                    <center>
+                        <img src="styles/images/people.png"><br>
+                        Ghép bàn
+                    </center>
+                </a>
+
+                <a class="mainButton" data-role="button" href="#message">
+                    <center>
+                        <img src="styles/images/icons/mail1.png"><br>
+                        Tin nhắn
+                    </center>
+                </a>
                 <a class="mainButton" data-role="button" href="#viewNotification">
-                <center><img src="styles/images/icons/msg2.png"><br>
-                Thông báo</center>
-            </a>
+                    <center>
+                        <img src="styles/images/icons/msg2.png"><br>
+                        Thông báo
+                    </center>
+                </a>
                 <a class="mainButton" data-role="button" href="">
-                <center><img src="styles/images/icons/sett-big.png"><br>
-                Cấu hình</center>
-            </a>
-            
-        </div>
-        <div id="settingsPopOver" data-role="popover" data-width="300" data-height="300">
-            <div data-role="view">
-                <ul data-role="buttongroup">
-                    <a class="mainButton" data-role="button" href="">Button</a>
-                    <a class="mainButton" data-role="button" href="">Button</a>
-                </ul>
+                    <center>
+                        <img src="styles/images/icons/sett-big.png"><br>
+                        Cấu hình
+                    </center>
+                </a>
+
+            </div>
+            <div id="settingsPopOver" data-role="popover" data-width="300" data-height="300">
+                <div data-role="view">
+                    <ul data-role="buttongroup">
+                        <a class="mainButton" data-role="button" href="">Button</a>
+                        <a class="mainButton" data-role="button" href="">Button</a>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Notification View -->
-    <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <a>ListView Link</a>
-            </li>
-            <li>
-                <a>ListView Link</a>
-            </li>
-        </ul>
-    </div>
-    
-    <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
-        
-    </div>
-</body>
+
+        <!-- Notification View -->
+        <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <a>ListView Link</a>
+                </li>
+                <li>
+                    <a>ListView Link</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
+
+        </div>
+    </body>
 </html>
