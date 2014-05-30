@@ -8,13 +8,14 @@
 label{
     color:Black;
 }
-input, select, textarea{
-    color: #ff0000;
+#modalguestquantity input, select, textarea{
+    color: #ff0000 !important;
 }
 
-textarea:focus, input:focus {
-    color: #ff0000;
+#viewTableInformation input, select, textarea {
+    color: #ff0000 !important;
 }
+
 #questQuantity .inputGuestQuantity{
     width: 130px;
     height: auto;
