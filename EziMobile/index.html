@@ -3,16 +3,19 @@
 <head>
     <title>EziMobile</title>
     <meta charset="utf-8" />
+    <!--Kendo Requirements-->
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="styles/main.css" rel="stylesheet" />
-    <link href="styles/android.css" rel="stylesheet" />
-    <link href="styles/ios.css" rel="stylesheet" />
-    <link href="styles/wp.css" rel="stylesheet"/>
-
+    <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <!--App Css and JS-->
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/dineIn.css" rel="stylesheet" />
     <script src="scripts/app.js"></script>
+    <script src="scripts/dineIn.js"></script>
+    <!--Plugin -->
+    
 </head>
 <body>
     <!-- Main Layout -->
@@ -50,7 +53,7 @@
         </ul>
     </div>
     <!-- Login ModalView -->
-    <div id="modalLogin" data-role="modalview" data-width="300" data-height="300">
+    <div id="modalLogin" data-role="modalview" data-width="80%" data-height="75%">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Login</span>
@@ -58,27 +61,40 @@
             </div>
         </div>
         
-        <ul data-role="listview" data-style="inset">
+        <ul data-role="listview">
             <li>
                 <label>Username
-                    <input type="text" value="Text" />
+                    <input id="txtUsername" type="text" value="Username" />
                 </label>
             </li>
             <li>
                 <label>Password
-                    <input type="password" value="" />
+                    <input id="txtPassword" type="password" value="Password" />
                 </label>
             </li>
         </ul>
         
-        <a id="login-submit" data-role="button" href="" data-click="closeModalViewLogin">Login</a>
-        <a id="login-register" data-role="button" href="">Register</a>
+        <a id="login-submit" data-role="button" data-click="loginClick">Login</a>
+        <a id="login-register" data-role="button" data-click="optionClick">Option</a>
+        
+        <ul id="listLoginOption" data-role="listview">
+            <li>
+                <label>Branch
+                    <input id="dropBranch" type="text" value="" />
+                </label>
+            </li>
+            <li>
+                <label>Language
+                    <input id="dropLanguage" type="text" value="" />
+                </label>
+            </li>
+        </ul>
     </div>
 	<!-- Home View -->
     <div id="viewHome" data-role="view" data-layout="layoutMain" data-title="Home">
         <div id="main">
             
-            <a class="mainButton" data-role="button">
+            <a class="mainButton" data-role="button" href="views/dineIn.html">
                 <center><img src="styles/images/keyboard.png"><br>
                 Mở bàn</center>
             </a>

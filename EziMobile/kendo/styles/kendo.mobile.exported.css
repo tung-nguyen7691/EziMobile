@@ -1,0 +1,110 @@
+/* iOS*/
+.km-ios7 .km-view .km-content .km-listgroupinset .km-group-title .km-text {
+    color: rgb(153, 153, 153);
+}
+.km-ios7 .km-view .km-content {
+    background-color: rgb(255, 255, 255);
+}
+.km-ios7 .km-view .km-content .km-list > li .km-icon {
+    color: rgb(0, 0, 0);
+}
+.km-ios7 .km-view .km-content .km-listgroupinset .km-group-title {
+    color: rgb(204, 204, 204);
+}
+.km-ios7 .km-view .km-content .km-list .km-state-active .km-listview-link {
+    background-color: rgb(0, 163, 199);
+}
+.km-ios7 .km-view .km-navbar .km-button.km-state-active .km-text {
+    color: rgb(0, 100, 181);
+}
+.km-ios7 .km-view .km-content .km-listgroup .km-group-title .km-text {
+    color: rgb(0, 0, 0);
+}
+.km-ios7 .km-view .km-content .km-listgroup .km-group-title {
+    color: rgb(0, 0, 0);
+}
+/* Android */
+.km-android .km-view .km-content {
+    background-color: #BFBFBF;
+    color: rgb(51, 51, 51);
+}
+.km-android .km-view .km-content .km-listgroupinset .km-group-title .km-text {
+    color: rgb(51, 51, 51);
+}
+.km-android .km-view .km-tabstrip .km-button {
+    background-color: rgb(204, 204, 204);
+}
+.km-android .km-view .km-navbar {
+    background-color: Black;
+}
+.km-android .km-view .km-navbar .km-button .km-text {
+    color: rgb(51, 51, 51);
+}
+.km-android .km-listview .km-list {
+    border-top-color: rgb(153, 153, 153);
+}
+.km-android .km-view .km-content .km-list > li {
+    border-color: rgb(153, 153, 153);
+}
+.km-android .km-view .km-content .km-listgroup .km-group-title .km-text {
+    color: #333;
+}
+.km-android .km-view .km-content .km-list > li .km-switch .km-switch-container {
+    background-color: #b2b2b2;
+}
+/*Blackberry */
+.km-blackberry .km-view .km-content .km-listgroupinset .km-group-title .km-text {
+    color: rgb(153, 153, 153);
+}
+.km-blackberry .km-view .km-content {
+    background-color: rgb(255, 255, 255);
+}
+.km-blackberry .km-view .km-content .km-list > li .km-icon {
+    color: rgb(0, 0, 0);
+}
+.km-blackberry .km-view .km-content .km-listgroupinset .km-group-title {
+    color: rgb(204, 204, 204);
+}
+.km-blackberry .km-view .km-content .km-list .km-state-active .km-listview-link {
+    background-color: rgb(0, 163, 199);
+}
+.km-blackberry .km-view .km-navbar .km-view-title > * .km-button.km-state-active {
+    background-color: rgb(0, 163, 199);
+}
+.km-blackberry .km-view .km-content .km-button.km-state-active .km-text {
+    color: rgb(0, 163, 199);
+}
+/*Windows Phone */
+.km-wp .km-view .km-content {
+    background-color: rgb(255, 255, 255);
+}
+.km-wp .km-view .km-content .km-listgroupinset .km-group-title .km-text {
+    color: rgb(0, 0, 0);
+}
+.km-wp .km-view .km-content .km-list > li .km-icon {
+    color: rgb(0, 0, 0);
+}
+.km-wp .km-view .km-content .km-listgroupinset .km-group-title {
+    color: rgb(204, 204, 204);
+}
+.km-wp .km-view .km-content .km-list .km-state-active .km-listview-link {
+    background-color: rgb(0, 163, 199);
+}
+.km-wp .km-view .km-navbar {
+    background-color: rgb(0, 163, 199);
+}
+.km-wp .km-view .km-navbar .km-view-title > * {
+    color: rgb(255, 255, 255);
+}
+.km-wp .km-view .km-navbar .km-button.km-state-active .km-text {
+    color: rgb(255, 255, 255);
+}
+.km-wp .km-view .km-navbar .km-button.km-state-active {
+    background-color: rgb(0, 100, 181);
+}
+.km-wp .km-view .km-content .km-button.km-state-active .km-text {
+    color: rgb(255, 255, 255);
+}
+.km-wp .km-view .km-content .km-button .km-text {
+    color: rgb(255, 255, 255);
+}

@@ -1,20 +1,35 @@
 document.addEventListener('deviceready', function() {
-    $("#login").kendoMobileModalView("open");
-    /*var name = $('#name').val();*/
+    $("#modalLogin").kendoMobileModalView("open");
+    $("#listLoginOption").hide();
 });
 
-function closeModalViewLogin() {
-    /*jQuery.ajax({
-        url: 'http://localhost:46241/WebService1.asmx/HelloWorld',
+function loginClick() {
+    var name = $('#txtUsername').val();
+    var pass = $('#txtPassword').val();
+    
+    var loginObj = { UserName: name, PassWord: pass};
+    
+    $.ajax({
+        url: 'http://localhost:8989/TranferData/MobileService.asmx/Login',
         type: "POST",
         dataType: "json",
+        data: JSON.stringify(loginObj),
         contentType: "application/json; charset=utf-8",
-        success: function (data) {
-            alert(JSON.stringify(data));
+        failure: function() {
+            alert("Login Failed");
+        },
+        success: function(data){
+            var result = JSON.parse(data.d.Result);
+            if(result.result)
+            	$("#modalLogin").kendoMobileModalView("close");
+            else
+            	alert("Login Failed");
         }
-    });*/
-    $("#login").kendoMobileModalView("close");
-    
+    })
+}
+
+function optionClick(){
+    $("#listLoginOption").toggle();
 }
 
 var app = new kendo.mobile.Application();
