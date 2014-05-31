@@ -44,7 +44,7 @@
 
                 <script type="text/x-kendo-template" id="template">
                     <div class="product">
-                        <img src="styles/images/#= ProductID #.jpg" alt="#: ProductName # image" />
+                        <!--<img src="styles/images/#= ProductID #.jpg" alt="#: ProductName # image" />-->
                         <h3>#:ITG_NAME#</h3>
                     </div>
                 </script>
@@ -53,8 +53,8 @@
                     var dataSource;
                     
                     $(function() {
-                        reaID = 1;
-                        currencyID = 1;
+                        reaID = '1';
+                        currencyID = '1';
                         levelgroup = 1;
                         _branchID = 3;
                         _langID = 2;
@@ -70,7 +70,7 @@
                                    url: _webServicePath + "getAllItemGroup",
                                    type: "POST",
                                    dataType: "json",
-                                   data: dataRequest,
+                            	   data : JSON.stringify(dataRequest),
                                    contentType: "application/json; charset=utf-8",
                                    failure: function() {
                                        alert("Load Data Failed");
