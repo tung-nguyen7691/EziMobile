@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>EziMobile</title>
-    <meta charset="utf-8" />
-    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    
-    <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
-    
-</head>
-<body>
-    <!-- Main Layout -->
-    <div data-id="layoutMain" data-role="layout">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span data-role="view-title">EziMobile</span>
-                <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
-                <a data-role="backbutton" data-align="left">Back</a>
+    <head>
+        <title>EziMobile</title>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- Main Layout -->
+        <div data-id="layoutMain" data-role="layout">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title">EziMobile</span>
+                    <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
+                    <a data-role="backbutton" data-align="left">Back</a>
+                </div>
+            </div>
+
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a data-icon="home" href="#viewHome">Home</a>
+                    <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
+                    <a data-role="button" data-icon="globe">Notifications</a>
+                    <a data-role="button" data-icon="contacts">Message</a>
+                </div>
             </div>
         </div>
-        
-        <div data-role="footer">
-            <div data-role="tabstrip">
-                <a data-icon="home" href="#viewHome">Home</a>
-                <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
-                <a data-role="button" data-icon="globe">Notifications</a>
-                <a data-role="button" data-icon="contacts">Message</a>
+
+        <!-- GUest QUantity ModalView -->
+        <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span>Chọn loại khách</span>
+
+                </div>
             </div>
+
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Nam
+
+                        <input type="number" value="0" />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Nữ
+
+                        <input type="number" value="0" />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Trẻ em
+
+                        <input type="number" value="0" />
+                    </label>
+                </li>
+            </ul>
+
+            <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
+            <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
         </div>
-    </div>
-    <!-- Login ModalView -->
-    <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
-        <div data-role="header">
-            <div data-role="navbar">
-                <span>Chọn loại khách</span>
-                
+
+        <!-- TableInformation View -->
+        <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
+            <div id="questQuantity">
+                <label>Số lượng khách:</label>
+                <input type="text" value="" class="inputGuestQuantity"/>
+                <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
             </div>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Mã thẻ vip
+                        <input type="text" value="***" />
+                    </label>
+                </li>
+            </ul>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Nhóm Khách hàng
+                        <input type="text" value="***" />
+                    </label>
+                </li>
+            </ul>
+            <center>
+                <img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
+            </center>
         </div>
-        
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Nam
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-            <li>
-                <label>Nữ
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-            <li>
-                <label>Trẻ em
-                    
-                    <input type="number" value="0" />
-                </label>
-            </li>
-        </ul>
-        
-        <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
-        <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
-    </div>
-	<!-- TableInformation View -->
-    <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
-        <div id="questQuantity">
-             <label>Số lượng khách:</label>
-             <input type="text" value="" class="inputGuestQuantity"/>
-            <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
-        </div>
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Mã thẻ vip
-                    <input type="text" value="***" />
-                </label>
-            </li>
-        </ul>
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>Nhóm Khách hàng
-                    <input type="text" value="***" />
-                </label>
-            </li>
-        </ul>
-        <center>
-        	<img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
-        </center>
-    </div>
-</body>
+    </body>
 </html>

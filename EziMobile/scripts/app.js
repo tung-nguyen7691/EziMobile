@@ -79,7 +79,9 @@ function btnLoginClick() {
                    var result = data.d.LoginResult;
                    var isError = data.d.isError;
                    if (result){
-                       _userId = data.d.UserID;
+                       _userID = data.d.UserID;
+                       _langID = langID;
+                       _branchID = BranchID;
                        $("#modalLogin").kendoMobileModalView("close");
                    }
                    else if(isError){

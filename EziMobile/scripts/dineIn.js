@@ -1,33 +1,33 @@
 function listViewAreaBind() {
+    _langID = 2;
+    _branchID = 3;
+    _userID = 1;
+    
     var dataRequest = {
-        ORG_AUTOID: 3,
-        RBT_AUTOID: 2,
-        langID: 1
+        branchID: _branchID,
+        RectID: 1,
+        langID: _langID,
+        UserID: _userID
     };
     $.ajax({
-        url: 'http://localhost:8989/TranferData/MobileService.asmx/LoadArea',
-        type: "POST",
-        dataType: "json",
-        data: JSON.stringify(dataRequest),
-        contentType: "application/json; charset=utf-8",
-        failure: function() {
-            alert("Load Data Failed");
-        },
-        success: function(data){
-            var result = JSON.parse(data.d.Result);
-            if(result.RESAREA !== null)
-            	$("#listArea").kendoMobileListView({ 
-                    dataSource: result.RESAREA,
-                    template: templateArea
-                });
-            else
-            	alert("Load Data Failed");
-        }
-    })
+               url: _webServicePath + 'getArea',
+               type: "POST",
+               dataType: "json",
+               data: JSON.stringify(dataRequest),
+               contentType: "application/json; charset=utf-8",
+               failure: function() {
+                   alert("No Areas Found");
+               },
+               success: function(data) {
+                   var result = JSON.parse(data.d.Result);
+                   if (result.RESAREA !== null)
+                       $("#dropdownArea").kendoDropDownList({
+                                                                dataTextField: "REA_NAME",
+                                                                dataValueField: "REA_AUTOID",
+                                                                dataSource: result.RESAREA
+                                                            });
+                   else
+                       alert("No Areas Found");
+               }
+           })
 }
-
-var templateArea = kendo.template(
-	'<a class="itemAreaDetail">'+
-        '<strong>#: REA_NAME #</strong>'+
-    '</a>');
-
