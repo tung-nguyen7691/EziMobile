@@ -44,58 +44,30 @@
 
                 <script type="text/x-kendo-template" id="template">
                     <div class="product">
-                        <!--<img src="styles/images/#= ProductID #.jpg" alt="#: ProductName # image" />-->
+                        <img src="styles/images/#= ITG_PARENTID #.jpg" alt="#: ITG_NAME # image" />
                         <h3>#:ITG_NAME#</h3>
+                        <p>#:kendo.toString(ITG_LEVEL, "c")#</p>
                     </div>
                 </script>
 
                 <script>
-                    var dataSource;
-                    
                     $(function() {
-                        reaID = '1';
-                        currencyID = '1';
-                        levelgroup = 1;
-                        _branchID = 3;
-                        _langID = 2;
-    
-                        var dataRequest = {
-                            reaID: reaID,
-                            currencyID: currencyID,
-                            levelgroup: levelgroup,
-                            branchID: _branchID,
-                            langID: _langID
-                        };
-                        $.ajax({
-                                   url: _webServicePath + "getAllItemGroup",
-                                   type: "POST",
-                                   dataType: "json",
-                            	   data : JSON.stringify(dataRequest),
-                                   contentType: "application/json; charset=utf-8",
-                                   failure: function() {
-                                       alert("Load Data Failed");
-                                   },
-                                   success: function(data) {
-                                       var result = JSON.parse(data.d.Result);
-                                       if (result.ITEMGROUP !== null) {
-                                           dataSource = result.ITEMGROUP;
-                                       } else {
-                                           alert("Load Data Failed");
-                                       }
-                                   }
-                               })
-                    
+                        var dataSource = new kendo.data.DataSource({
+                                                                       data: products,
+                                                                       pageSize: 15
+                                                                   });
+
                         $("#pager").kendoPager({
                                                    dataSource: dataSource
                                                });
-                    
+
                         $("#listView").kendoListView({
                                                          dataSource: dataSource,
                                                          template: kendo.template($("#template").html())
                                                      });
                     });
                 </script>
-                
+
                 <style scoped>
                     .demo-section
                     {
@@ -172,10 +144,10 @@
         </div>
         <!-- Notification View -->
         <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
-        
+
         </div>
         <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
-        
+
         </div>
     </body>
 </html>
