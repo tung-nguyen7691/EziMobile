@@ -32,76 +32,89 @@
                 </div>
             </div>
         </div>
-        <style>
-            .k-fx-tileleft.k-fx-end .k-fx-next #details,
-            .k-fx-tileleft.k-fx-end .k-fx-current #details,
-            .k-fx-tileright.k-fx-end .k-fx-next #details,
-            .k-fx-tileright.k-fx-end .k-fx-current #details {
-                -webkit-transition: all 350ms ease-out;
-                -moz-transition: all 350ms ease-out;
-                transition: all 350ms ease-out;
-            }
 
-            .k-fx-tileleft.k-fx-start .k-fx-next #details{
-                -webkit-transform: translatex(100%);
-                -moz-transform: translatex(100%);
-                transform: translatex(100%);
-            }
-
-            .k-fx-tileleft.k-fx-end .k-fx-current #details{
-                -webkit-transform: translatex(-100%);
-                -moz-transform: translatex(-100%);
-                transform: translatex(-100%);
-            }
-
-
-            /* right */
-            .k-fx-tileright.k-fx-start .k-fx-next #details{
-                -webkit-transform: translatex(-100%);
-                -moz-transform: translatex(-100%);
-                transform: translatex(-100%);
-            }
-
-            .k-fx-tileright.k-fx-end .k-fx-current #details{
-                -webkit-transform: translatex(100%);
-                -moz-transform: translatex(100%);
-                transform: translatex(100%);
-            }
-        </style>
         <!-- TableInformation View -->
         <div id="viewDetailFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
-            <div id="details">
-                <a data-bind="attr: {href: previousHref }" id="navigate-prev" href="#/menu/1"></a>
-                <div id="detail-info">
-                    <img class="main-image" data-bind="attr: { src: imgUrl }" alt="Selected Product" title="Selected Product" src="styles/images/1.jpg">
-                    <div id="description">
-                        <h1 data-bind="text: current.name">Chirashi sushi</h1>
-                        <p data-bind="text: current.description">Sushi bar variety with sushi rice.</p>
-                        <div id="details-total">
-                            <p id="price-quantity" data-bind="text: price">$21.00</p>
-                            <button class="buy" data-bind="click: addToCart">Add to cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="nutrition-info">
-                    <h2>Nutritional Information</h2>
-                    <dl>
-                        <dt>Protein</dt>
-                        <dd data-bind="text: current.stats.protein">2.3138</dd>
-                        <dt>Fat (total)</dt>
-                        <dd data-bind="text: current.stats.fat">0.6041</dd>
-                        <dt>Carbohydrate</dt>
-                        <dd data-bind="text: current.stats.fat">0.6041</dd>
-                        <dt>Energy (kJ)</dt>
-                        <dd data-bind="text: current.stats.energy">7.5314</dd>
-                        <dt>Energy (kcal)</dt>
-                        <dd data-bind="text: kCal">1.8000</dd>
-                        <dt>Sugar</dt>
-                        <dd data-bind="text: current.stats.sugar">0.3114</dd>
-                    </dl>
-                </div>
-                <a data-bind="attr: { href: nextHref }" id="navigate-next" href="#/menu/3"></a>
+            <div id="example" role="application">
+		    <div id="tshirt-view" class="demo-section k-header">
+			    <h2>Customize your Kendo T-shirt</h2>
+			    <img id="tshirt" src="styles/images/1.jpg" />
+                <div id="options">
+			        <h4>T-shirt Fabric</h4>
+                    <input id="fabric" placeholder="Select fabric..." />
+
+                    <h4>T-shirt Size</h4>
+                    <select id="size" placeholder="Select size...">
+				        <option>X-Small</option>
+				        <option>Small</option>
+				        <option>Medium</option>
+				        <option>Large</option>
+				        <option>X-Large</option>
+				        <option>2X-Large</option>
+			        </select>
+
+			        <button class="k-button" id="get">Customize</button>
+			    </div>
             </div>
+		<style scoped>
+			.demo-section {
+				width: 500px;
+				height: 340px;
+			}
+			.demo-section h2 {
+				text-transform: uppercase;
+				font-size: 1.2em;
+				margin-bottom: 30px;
+			}
+			.demo-section h4 {
+				margin-top: 1.5em;
+			}
+			#tshirt {
+				float: left;
+				margin: 0 40px 30px 0;
+			}
+			#options {
+				padding: 20px 0 30px 30px;
+			}
+			#get {
+				margin-top: 25px;
+			}
+            .k-readonly
+            {
+                color: gray;
+            }
+		</style>
+
+            <script>
+                $(document).ready(function() {
+                    // create ComboBox from input HTML element
+                    $("#fabric").kendoComboBox({
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        dataSource: [
+                            { text: "Cotton", value: "1" },
+                            { text: "Polyester", value: "2" },
+                            { text: "Cotton/Polyester", value: "3" },
+                            { text: "Rib Knit", value: "4" }
+                        ],
+                        filter: "contains",
+                        suggest: true,
+                        index: 3
+                    });
+
+                    // create ComboBox from select HTML element
+                    $("#size").kendoComboBox();
+
+                    var fabric = $("#fabric").data("kendoComboBox");
+					var select = $("#size").data("kendoComboBox");
+
+
+					$("#get").click(function() {
+					    alert('Thank you! Your Choice is:\n\nFabric ID: ' + fabric.value() + ' and Size: ' + select.value());
+                    });
+                });
+            </script>
+        </div>
         </div>
         <!-- Notification View -->
         <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
