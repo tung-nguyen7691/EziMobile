@@ -1,13 +1,13 @@
 function listViewAreaBind() {
-    _langId = 2;
-    _orgId = 3;
-    _userId = 1;
+    _langID = 2;
+    _branchID = 3;
+    _userID = 1;
     
     var dataRequest = {
-        orgID: _orgId,
+        branchID: _branchID,
         RectID: 1,
-        langID: _langId,
-        UserID: _userId
+        langID: _langID,
+        UserID: _userID
     };
     $.ajax({
                url: _webServicePath + 'getArea',
