@@ -1,18 +1,50 @@
-#viewDetailFood .km-content{
+#viewDetailFood .km-content
+{
     background: #b1e6e5;
     padding: 10px;
 }
-@font-face {
-  font-family: 'Droid Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Sans'), local('DroidSans'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+.buy, .buy:hover
+{
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
 }
-@font-face {
-  font-family: 'Droid Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+.buy
+{
+    float: left;
+    height: 30px;
+    width: 111px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgb(214, 0, 65);
+    background: -moz-linear-gradient(top, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(214, 0, 65, 1)), color-stop(100%, rgba(169, 0, 64, 1)));
+    background: -webkit-linear-gradient(top, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
+    background: -o-linear-gradient(top, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
+    background: linear-gradient(to bottom, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60041', endColorstr='#a90040',GradientType=0 );
 }
-
-
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, input, p, th, td, button, span
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+@font-face
+{
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face
+{
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
