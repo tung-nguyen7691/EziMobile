@@ -1,14 +1,14 @@
 var getGroupFood;
                     
 $(function() {
-    reaID = '1';
+    areaID = '1';
     currencyID = '1';
     levelgroup = 1;
     _branchID = 3;
     _langID = 2;
     
     var dataRequest = {
-        reaID: reaID,
+        areaID: areaID,
         currencyID: currencyID,
         levelgroup: levelgroup,
         branchID: _branchID,
