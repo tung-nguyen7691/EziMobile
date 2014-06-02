@@ -2,9 +2,6 @@
     background: #b1e6e5;
     padding: 10px;
 }
-#questQuantity{
-    margin: 5px 5px 5px 15px;
-}
 #modalguestquantity label{
     color: Black;
 }
@@ -17,22 +14,4 @@
 
 #viewTableInformation input, select, textarea {
     color: #ff0000 !important;
-}
-
-#questQuantity .inputGuestQuantity{
-    width: 130px;
-    height: auto;
-    float: none;
-}
-#questQuantity .btnGuestQuantity{
-    width: 25px;
-    height: 25px;
-    float: right;
-}
-
-.km-android .inputGuestQuantity{
-    float: left;
-}
-.km-android .btnGuestQuantity{
-    float: right;
 }

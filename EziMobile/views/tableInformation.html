@@ -1,9 +1,6 @@
-<div id="viewTableInformation" data-role="view" data-title="Table Information" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="tableInformationLoad">
+<div id="viewTableInformation" data-role="view" data-title="Thông tin bàn" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="tableInformationLoad">
     <!-- TableInformation View -->
     <div id="questQuantity">
-        <label>Số lượng khách:</label>
-        <input class="inputGuestQuantity" id="inputGuestQuantity" type="text"/>
-        <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
     </div>
     <ul data-role="listview" data-style="inset">
         <li>
@@ -12,20 +9,26 @@
                 <input id="txtVipCode" type="text" value="***" />
             </label>
         </li>
-    </ul>
-    <ul data-role="listview" data-style="inset">
         <li>
             <label>
                 Nhóm Khách hàng
                 <input type="text" value="***" />
             </label>
         </li>
+        <li>
+            <label>Số lượng khách:
+                <input type="text" onclick="openModalViewGuestQuantity()"/>
+            </label>
+        </li>
     </ul>
     <center>
-        <img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
+        <img src="styles/images/avatar.png" alt="" width="200" height="200">
+    </center>
+    <center>
+        <img src="styles/images/btn-ok.png" alt="" width="50" height="50">
     </center>
     <!-- GUest QUantity ModalView -->
-    <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
+    <div id="modalguestquantity" data-role="modalview" data-width="85%" data-height="300" data-modal="true">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Chọn loại khách</span>
@@ -33,25 +36,22 @@
             </div>
         </div>
 
-        <ul data-role="listview" data-style="inset">
+        <ul data-role="listview" >
             <li>
                 <label>
                     Nam
-
-                    <input value="0" id="edtmale" />
+                    <input value="0" type="number" id="edtmale" />
                 </label>
             </li>
             <li>
                 <label>
                     Nữ
-
                     <input value="0" id="edtfemale" />
                 </label>
             </li>
             <li>
                 <label>
                     Trẻ em
-
                     <input value="0" id="edtchild"/>
                 </label>
             </li>
@@ -60,11 +60,4 @@
         <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
         <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
     </div>
-    <style scoped>
-        .demo-section
-        {
-            width: 400px;
-        }
-    </style>
-
 </div>
