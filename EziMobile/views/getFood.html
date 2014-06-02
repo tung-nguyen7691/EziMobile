@@ -18,8 +18,8 @@
         <script>
             $(function() {
                 var dataSource = new kendo.data.DataSource({
-                                                               data: getGroupFood,
-                                                               pageSize: 10
+                                                               data: getFood,
+                                                               pageSize: 15
                                                            });
                     
                 $("#pager").kendoPager({
@@ -32,7 +32,7 @@
                                              });
             });                    
         </script>
-
+        
         <style scoped>
             .demo-section
             {

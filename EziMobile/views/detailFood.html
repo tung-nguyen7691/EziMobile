@@ -36,12 +36,12 @@
         <!-- TableInformation View -->
         <div id="viewDetailFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
             <div id="example" role="application">
-                <div id="tshirt-view" class="demo-section k-header">
-                    <img id="tshirt" src="styles/images/1.jpg" />
-                    <div id="options">
+                <div class="demo-section k-header">
+                    <div id="detail-info">
+                        <img id="itemImg" src="styles/images/1.jpg" />
                         <div id="description">
-                            <h1 data-bind="text: current.name">Sashimi salad</h1>
-                            <p data-bind="text: current.description">Organic greens topped with fresh sashimi, wasabi soy vinaigrette.</p>
+                            <h2>Tên món</h2>
+                            <p>Mô tả món.</p>
                             <div id="details-total">
                                 <p id="price-quantity" data-bind="text: price">$12.00</p>
                                 <button class="buy" data-bind="click: addToCart">Add to cart</button>

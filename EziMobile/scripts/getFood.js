@@ -1,4 +1,4 @@
-var getGroupFood;
+var getFood;
                     
 $(function() {
     areaID = '1';

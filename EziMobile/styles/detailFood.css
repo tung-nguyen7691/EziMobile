@@ -28,23 +28,12 @@
     background: linear-gradient(to bottom, rgba(214, 0, 65, 1) 0%, rgba(169, 0, 64, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60041', endColorstr='#a90040',GradientType=0 );
 }
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, input, p, th, td, button, span
+
+#detail-info
 {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    display: inline-block;
 }
-@font-face
+#description
 {
-    font-family: 'Droid Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Droid Sans'), local('DroidSans'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
-}
-@font-face
-{
-    font-family: 'Droid Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v4/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+    display: inline-block;
 }
