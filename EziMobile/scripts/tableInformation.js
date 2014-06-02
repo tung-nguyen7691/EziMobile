@@ -9,11 +9,11 @@ function tableInformationLoad() {
                                           spin: onSpin
                                       });
     $("#edtfemale").kendoNumericTextBox({
-                                          spin: onSpin
-                                      });
+                                            spin: onSpin
+                                        });
     $("#edtchild").kendoNumericTextBox({
-                                          spin: onSpin
-                                      });
+                                           spin: onSpin
+                                       });
     $("#inputGuestQuantity").kendoNumericTextBox();
 }
 
@@ -24,4 +24,8 @@ function onSpin() {
     var total = male + female + child;
     var txtGuestQuantity = $("#inputGuestQuantity").data("kendoNumericTextBox");
     txtGuestQuantity.value(total);
+}
+
+function viewTableInformationShow(e) {
+    $("#txtVipCode").val(e.view.params.autoid);
 }

@@ -1,4 +1,4 @@
-function listViewAreaBind() {
+function listViewAreaInit() {
     _langID = 2;
     _branchID = 3;
     _userID = 1;
@@ -59,15 +59,29 @@ function loadTableGrid(e) {
                success: function(data) {
                    var result = JSON.parse(data.d.Result);
                    if (result.CustomerTable !== null) {
-                       var template = kendo.template("<svg style='padding: 5px' width='110' height='110'>" +
-                                                     "<rect width='110' height='110' rx='20' ry='20' stroke='cyan' stroke-width='3' fill='white' >" +
-                                                     "</rect>" +
-                                                     "<text x='20' y='15' fill='cyan'>#= RET_DEFINEID #</text>" +
-                                                     "</svg>");
+                       var template = kendo.template(
+                           "<div class='tableDiv' data-autoid='#= RET_AUTOID #' >" +
+                           "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
+                           "<div clase.tars='tableContent'> </div>" +
+                           "</div>");
                        var displayData = kendo.render(template, result.CustomerTable); //render the template
                        $("#tableGrid").html(displayData); //display the result
+                       //bind click event to table div and children
+                       $(".tableDiv").click(function(e) {
+                           tableClick(e);
+                       });
+                       $(".tableDiv").children().click(function(e) {
+                           e.stopPropagation();
+                           tableClick(e);
+                       });
                    } else
                        alert("No Tables Found");
                }
            })
+}
+
+function tableClick(e) {
+    var parentDiv = $(e.target).closest('.tableDiv');
+    var autoid = parentDiv.attr("data-autoid");
+    app.navigate('views/tableInformation.html?autoid='+autoid);
 }
