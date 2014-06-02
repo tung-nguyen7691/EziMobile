@@ -1,105 +1,70 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>EziMobile</title>
-        <meta charset="utf-8" />
-        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+<div id="viewTableInformation" data-role="view" data-title="Table Information" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="tableInformationLoad">
+    <!-- TableInformation View -->
+    <div id="questQuantity">
+        <label>Số lượng khách:</label>
+        <input class="inputGuestQuantity" id="inputGuestQuantity" type="text"/>
+        <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label>
+                Mã thẻ vip
+                <input id="txtVipCode" type="text" value="***" />
+            </label>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label>
+                Nhóm Khách hàng
+                <input type="text" value="***" />
+            </label>
+        </li>
+    </ul>
+    <center>
+        <img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
+    </center>
+    <!-- GUest QUantity ModalView -->
+    <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Chọn loại khách</span>
 
-        <script src="cordova.js"></script>
-        <script src="kendo/js/jquery.min.js"></script>
-        <script src="kendo/js/kendo.mobile.min.js"></script>
-
-    </head>
-    <body>
-
-        <!-- Main Layout -->
-        <div data-id="layoutMain" data-role="layout">
-            <div data-role="header">
-                <div data-role="navbar">
-                    <span data-role="view-title">EziMobile</span>
-                    <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
-                    <a data-role="backbutton" data-align="left">Back</a>
-                </div>
-            </div>
-
-            <div data-role="footer">
-                <div data-role="tabstrip">
-                    <a data-icon="home" href="#viewHome">Home</a>
-                    <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
-                    <a data-role="button" data-icon="globe">Notifications</a>
-                    <a data-role="button" data-icon="contacts">Message</a>
-                </div>
             </div>
         </div>
 
-        <!-- GUest QUantity ModalView -->
-        <div id="modalguestquantity" data-role="modalview" data-width="300" data-height="300" data-modal="true">
-            <div data-role="header">
-                <div data-role="navbar">
-                    <span>Chọn loại khách</span>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>
+                    Nam
 
-                </div>
-            </div>
+                    <input value="0" id="edtmale" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Nữ
 
-            <ul data-role="listview" data-style="inset">
-                <li>
-                    <label>
-                        Nam
+                    <input value="0" id="edtfemale" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Trẻ em
 
-                        <input value="0" id="edtmale" />
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        Nữ
+                    <input value="0" id="edtchild"/>
+                </label>
+            </li>
+        </ul>
 
-                        <input value="0" id="edtfemale" />
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        Trẻ em
+        <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
+        <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
+    </div>
+    <style scoped>
+        .demo-section
+        {
+            width: 400px;
+        }
+    </style>
 
-                        <input value="0" id="edtchild"/>
-                    </label>
-                </li>
-            </ul>
-
-            <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
-            <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
-        </div>
-        <style scoped>
-            .demo-section
-            {
-                width: 400px;
-            }
-        </style>
-        <!-- TableInformation View -->
-        <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn" data-init="tableInformationLoad">
-            <div id="questQuantity">
-                <label>Số lượng khách:</label>
-                <input class="inputGuestQuantity" id="inputGuestQuantity" type="text"/>
-                <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
-            </div>
-            <ul data-role="listview" data-style="inset">
-                <li>
-                    <label>
-                        Mã thẻ vip
-                        <input type="text" value="***" />
-                    </label>
-                </li>
-            </ul>
-            <ul data-role="listview" data-style="inset">
-                <li>
-                    <label>
-                        Nhóm Khách hàng
-                        <input type="text" value="***" />
-                    </label>
-                </li>
-            </ul>
-            <center>
-                <img src="styles/images/avatar.png" alt="Smiley face" width="200" height="200">
-            </center>
-        </div>
-    </body>
-</html>
+</div>
