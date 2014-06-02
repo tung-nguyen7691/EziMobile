@@ -46,21 +46,21 @@
                     <label>
                         Nam
 
-                        <input type="number" value="0" />
+                        <input value="0" id="edtmale" />
                     </label>
                 </li>
                 <li>
                     <label>
                         Nữ
 
-                        <input type="number" value="0" />
+                        <input value="0" id="edtfemale" />
                     </label>
                 </li>
                 <li>
                     <label>
                         Trẻ em
 
-                        <input type="number" value="0" />
+                        <input value="0" id="edtchild"/>
                     </label>
                 </li>
             </ul>
@@ -68,12 +68,17 @@
             <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
             <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
         </div>
-
+        <style scoped>
+            .demo-section
+            {
+                width: 400px;
+            }
+        </style>
         <!-- TableInformation View -->
-        <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn">
+        <div id="viewTableInformation" data-role="view" data-layout="layoutMain" data-title="Thông tin bàn" data-init="tableInformationLoad">
             <div id="questQuantity">
                 <label>Số lượng khách:</label>
-                <input type="text" value="" class="inputGuestQuantity"/>
+                <input class="inputGuestQuantity" id="inputGuestQuantity" type="text"/>
                 <img src="styles/images/arrow-down.png" alt="" class="btnGuestQuantity" onclick="openModalViewGuestQuantity()">
             </div>
             <ul data-role="listview" data-style="inset">
