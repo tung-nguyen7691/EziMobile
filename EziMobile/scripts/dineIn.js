@@ -5,7 +5,7 @@ function listViewAreaBind() {
     
     var dataRequest = {
         branchID: _branchID,
-        rectID: 1,
+        counterID: 1,
         langID: _langID,
         userID: _userID
     };
@@ -36,13 +36,13 @@ function listViewAreaBind() {
 function loadTableGrid(e) {
     //selected item
     var selectedItem = this.dataItem(e.item.index());
-    var reaID = selectedItem.REA_AUTOID;
+    var areaID = selectedItem.REA_AUTOID;
     _langID = 2;
     _branchID = 3;
     _userID = 1;
 
     var dataRequest = {
-        reaID: reaID,
+        areaID: areaID,
         branchID: _branchID,
         langID: _langID,
         userID: _userID
