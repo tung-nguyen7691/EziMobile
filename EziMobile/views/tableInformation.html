@@ -1,4 +1,4 @@
-<div id="viewTableInformation" data-role="view" data-title="Thông tin bàn" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="tableInformationLoad">
+<div id="viewTableInformation" data-role="view" data-title="Thông tin bàn" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="viewTableInformationInit">
     <!-- TableInformation View -->
     <div id="questQuantity">
     </div>
@@ -42,24 +42,23 @@
             <li>
                 <label>
                     Nam
-                    <input value="0" type="number" id="edtmale" />
+                    <input value="0" type="number" min="0" id="edtmale" />
                 </label>
             </li>
             <li>
                 <label>
                     Nữ
-                    <input value="0" id="edtfemale" />
+                    <input value="0" type="number" min="0" id="edtfemale" />
                 </label>
             </li>
             <li>
                 <label>
                     Trẻ em
-                    <input value="0" id="edtchild"/>
+                    <input value="0" type="number" min="0" id="edtchild"/>
                 </label>
             </li>
         </ul>
 
-        <a id="yes" data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
-        <a id="no" data-role="button" data-click="closeModalViewGuestQuantity">Hủy</a>
+        <a data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
     </div>
 </div>

@@ -4,8 +4,10 @@ function openModalViewGuestQuantity() {
 function closeModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("close");
 }
-function tableInformationLoad() {
-    $("#edtmale").kendoNumericTextBox({
+function viewTableInformationInit() {
+    var numericEditor = $("#edtmale").data("kendoNumericTextBox");
+    
+    /*$("#edtmale").kendoNumericTextBox({
                                           spin: onSpin
                                       });
     $("#edtfemale").kendoNumericTextBox({
@@ -13,7 +15,7 @@ function tableInformationLoad() {
                                         });
     $("#edtchild").kendoNumericTextBox({
                                            spin: onSpin
-                                       });
+                                       });*/
     //$("#inputGuestQuantity").kendoNumericTextBox();
 }
 
@@ -27,5 +29,4 @@ function onSpin() {
 
 function viewTableInformationShow(e) {
     $("#txtVipCode").val(e.view.params.autoid);
-    $("#txtCustomerGroup").val(e.view.params.autoid);
 }
