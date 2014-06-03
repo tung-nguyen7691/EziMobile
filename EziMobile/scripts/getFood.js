@@ -4,8 +4,8 @@ $(function() {
     areaID = 1;
     currencyID = 1;
     parentGroupID = 1;
+    parentGroupPath = 1;
     parentLevelGroup = 1;
-    levelgroup = 1;
     _branchID = 3;
     _langID = 2;
     
@@ -13,8 +13,8 @@ $(function() {
         areaID: areaID,
         currencyID: currencyID,
         parentGroupID: parentGroupID,
+        parentGroupPath: parentGroupPath,
         parentLevelGroup: parentLevelGroup,
-        levelgroup: levelgroup,
         branchID: _branchID,
         langID: _langID
     };

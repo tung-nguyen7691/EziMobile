@@ -37,15 +37,17 @@ function viewTableInformationInit() {
            })
 }
 
-function guestQuantityOnChange() {
+function onSpin() {
     var male = parseInt($('#edtmale').val());
     var female = parseInt($('#edtfemale').val());
     var child = parseInt($("#edtchild").val());
-    
     var total = male + female + child;
     $("#inputGuestQuantity").val(total);
 }
 
 function viewTableInformationShow(e) {
     $("#txtVipCode").val(e.view.params.autoid);
+    $("#txtCustomerGroup").val(e.view.params.autoid);
+}
+function listViewCustomerGroup() {
 }
