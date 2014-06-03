@@ -1,8 +1,10 @@
 var getFood;
-                    
+
 $(function() {
-    areaID = '1';
-    currencyID = '1';
+    areaID = 1;
+    currencyID = 1;
+    parentGroupID = 1;
+    parentLevelGroup = 1;
     levelgroup = 1;
     _branchID = 3;
     _langID = 2;
@@ -10,12 +12,14 @@ $(function() {
     var dataRequest = {
         areaID: areaID,
         currencyID: currencyID,
+        parentGroupID: parentGroupID,
+        parentLevelGroup: parentLevelGroup,
         levelgroup: levelgroup,
         branchID: _branchID,
         langID: _langID
     };
     $.ajax({
-               url: _webServicePath + "getAllItemGroup",
+               url: _webServicePath + "getGroupChildFromGroup",
                type: "POST",
                dataType: "json",
                data : JSON.stringify(dataRequest),
@@ -26,7 +30,7 @@ $(function() {
                success: function(data) {
                    var result = JSON.parse(data.d.Result);
                    if (result.ITEMGROUP !== null) {
-                       getGroupFood = result.ITEMGROUP;
+                       getFood = result.ITEMGROUP;
                    } else {
                        alert("Load Data Failed");
                    }
