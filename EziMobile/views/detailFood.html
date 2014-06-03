@@ -3,10 +3,9 @@
     <head>
         <title>EziMobile</title>
         <meta charset="utf-8" />
-        <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
-        <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
+        <link href="styles/android.css" rel="stylesheet" />
+        <link href="styles/ios.css" rel="stylesheet" />
 
         <script src="cordova.js"></script>
         <script src="kendo/js/jquery.min.js"></script>
@@ -14,10 +13,49 @@
 
     </head>
     <body>
-        <!-- Template View -->
-        <div id="viewTemplate" data-role="view" data-layout="layoutMain" data-title="Template" >
-            <div data-role="header" >
+        <!-- Main Layout -->
+        <div data-id="layoutMain" data-role="layout">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title">EziMobile</span>
+                    <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
+                    <a data-role="backbutton" data-align="left">Back</a>
+                </div>
             </div>
+
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a data-icon="home" href="#viewHome">Home</a>
+                    <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
+                    <a data-role="button" data-icon="globe">Notifications</a>
+                    <a data-role="button" data-icon="contacts">Message</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TableInformation View -->
+        <div id="viewDetailFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
+            <div id="example" role="application">
+                <div class="demo-section k-header">
+                    <div id="detail-info">
+                        <img id="itemImg" src="styles/images/1.jpg" />
+                        <div id="description">
+                            <h2>Tên món</h2>
+                            <p>Mô tả món.</p>
+                            <div id="details-total">
+                                <p id="price-quantity" data-bind="text: price">$12.00</p>
+                                <button class="buy" data-bind="click: addToCart">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification View -->
+        <div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
+
+        </div>
+        <div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
 
         </div>
     </body>
