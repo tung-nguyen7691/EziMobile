@@ -1,18 +1,50 @@
-.mainButton img {
+.km-view[data-role="view"] .km-content
+{
+    padding: 15px;
+}
+
+.mainButton img
+{
     width: 48px;
     height: 48px;
 }
 
-#btnLogin,
-#btnConfig {
+.popupButton
+{
     display: block;
     text-align: center;
     margin: .6em .8em;
     font-size: 1.2em;
 }
 
+.headBar
+{
+    border: solid 0px #000000;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #00D8CC;
+    font-size: 30px;
+}
+
+.viewContent
+{
+    -moz-box-shadow: 10px 10px 5px #000000;
+    -webkit-box-shadow: 10px 10px 5px #000000;
+    box-shadow: 10px 10px 5px #000000;
+    border: solid 1px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: White;
+}
+
 /*Android*/
-.km-android .mainButton {
+.km-android .mainButton
+{
     width: 23%;
     height: 90px;
     border: none;
@@ -21,7 +53,8 @@
 }
 
 /*Tablet*/
-.km-tablet .mainButton {
+.km-tablet .mainButton
+{
     width: 27%;
     height: 90px;
     border: none;
@@ -30,7 +63,8 @@
 }
 
 /*iOs*/
-.km-ios7 .mainButton {
+.km-ios7 .mainButton
+{
     width: 31%;
     height: 90px;
     border: none;
@@ -38,7 +72,8 @@
 }
 
 /*WP*/
-.km-wp .mainButton {
+.km-wp .mainButton
+{
     width: 25%;
     height: 90px;
     border: none;

@@ -24,6 +24,7 @@
     <WP8Capabilities />
     <WP8TileTitle />
     <WP8ProductID>{7be8f07a-ddb1-4545-b31a-7c2f979b8696}</WP8ProductID>
+    <WP8PublisherID>{fb2cfabd-e35f-4dec-b405-6390638b3038}</WP8PublisherID>
     <WP8PublisherID>{e38273b3-84e9-454c-9abf-4e5ae77e38ed}</WP8PublisherID>
     <WP8Publisher />
   </PropertyGroup>

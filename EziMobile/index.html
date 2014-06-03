@@ -6,12 +6,12 @@
 
         <!--Kendo Requirements-->
         <!-- CSS -->
-
+        <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
         <link href="kendo/styles/kendo.mobile.exported.css" rel="stylesheet"/>
-        <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
         <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
-
+        
+		<!-- JS -->
         <script src="cordova.js"></script>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.all.min.js"></script>
@@ -52,7 +52,7 @@
                     <a data-icon="home" href="#RES_frmChooseFunctions">Home</a>
                     <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
                     <a data-role="button" data-icon="globe">Notifications</a>
-                    <a data-role="button" data-icon="contacts">Message</a>
+                    <a data-role="button" data-icon="contacts">Template</a>
                 </div>
             </div>
         </div>
@@ -99,8 +99,8 @@
                 </li>
             </ul>
 
-            <a id="btnLogin" data-role="button" href="" data-click="btnLoginClick">Login</a>
-            <a id="btnConfig" data-role="button" href="" data-click="btnConfigClick">Option</a>
+            <a id="btnLogin" data-role="button" class="popupButton" data-click="btnLoginClick">Login</a>
+            <a id="btnConfig" data-role="button" class="popupButton" data-click="btnConfigClick">Option</a>
 
             <ul id="listLoginOption" data-role="listview">
                 <li>

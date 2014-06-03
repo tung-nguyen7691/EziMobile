@@ -4,17 +4,7 @@ function openModalViewGuestQuantity() {
 function closeModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("close");
 }
-function tableInformationLoad() {
-    $("#edtmale").kendoNumericTextBox({
-                                          spin: onSpin
-                                      });
-    $("#edtfemale").kendoNumericTextBox({
-                                            spin: onSpin
-                                        });
-    $("#edtchild").kendoNumericTextBox({
-                                           spin: onSpin
-                                       });
-    //$("#inputGuestQuantity").kendoNumericTextBox();
+function viewTableInformationInit() {
     _langID = 2;
     _branchID = 3;
     
@@ -38,7 +28,6 @@ function tableInformationLoad() {
                                                                          dataTextField: "POG_NAME",
                                                                          dataValueField: "POG_AUTOID",
                                                                          dataSource: result.CustomerGroup,
-                                                                         //select: loadTableGrid
                                                                      });
                    else
                        alert("No Areas Found");
@@ -55,5 +44,7 @@ function onSpin() {
 }
 
 function viewTableInformationShow(e) {
-    $("#txtVipCode").val(e.view.params.autoid);
+    $("#tableID").html(e.view.params.autoid);
+}
+function listViewCustomerGroup() {
 }

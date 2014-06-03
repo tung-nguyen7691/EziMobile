@@ -62,7 +62,7 @@ function loadTableGrid(e) {
                        var template = kendo.template(
                            "<div class='tableDiv' data-autoid='#= RET_AUTOID #' >" +
                            "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
-                           "<div clase.tars='tableContent'> </div>" +
+                           "<div class='tableContent'> </div>" +
                            "</div>");
                        var displayData = kendo.render(template, result.CustomerTable); //render the template
                        $("#tableGrid").html(displayData); //display the result
