@@ -1,10 +1,21 @@
 var getFood;
+var autoid;
+var path;
+var level;
+
+function viewTableGetFoodShow(e) {
+    $("#txtautoid").val(e.view.params.path);
+    autoid = e.view.params.autoid;
+    path = e.view.params.path;
+    level = e.view.params.level;
+}
 
 $(function() {
+    //alert(autoid);
     areaID = 1;
     currencyID = 1;
-    parentGroupID = 1;
-    parentGroupPath = 1;
+    parentGroupID = 124;
+    parentGroupPath = '1;124';
     parentLevelGroup = 1;
     _branchID = 3;
     _langID = 2;
