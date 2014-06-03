@@ -12,7 +12,7 @@
             <div class="itemGroup">
                 <img src="styles/images/#= ITG_PARENTID #.jpg" alt="#: ITG_NAME # image" />
                 <h3>#:ITG_NAME#</h3>
-                <p id="itemPrice" data-id="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
+                <p class="itemPrice" data-autoid="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
             </div>
         </script>
         <script>
@@ -30,12 +30,11 @@
                                                  dataSource: dataSource,
                                                  template: kendo.template($("#template").html())
                                              });
-                $("#itemPrice").click(function(e) {
+                $(".itemPrice").click(function(e) {
                     itemFoodGroupClick(e);
                 });
-                $("#itemPrice").children().click(function(e) {
+                $(".itemPrice").children().click(function(e) {
                     e.stopPropagation();
-                    itemFo
                 });
                 function itemFoodGroupClick(e) {
                     var itemPrice = $(e.target).closest('.itemPrice');
