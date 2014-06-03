@@ -1,3 +1,5 @@
+var areaid;
+
 function openModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("open");
 }
@@ -47,6 +49,9 @@ function guestQuantityOnChange() {
 
 function viewTableInformationShow(e) {
     $("#tableID").html(e.view.params.defineid);
+    areaid = e.view.params.areaid;
 }
-function listViewCustomerGroup() {
+
+function btnTableInformationSubmitClick(){
+    app.navigate("views/getGroupFood.html?areaid="+areaid);
 }

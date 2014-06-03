@@ -1,7 +1,19 @@
 var getGroupFood;
                     
-$(function() {
-    areaID = '1';
+function getGroupFoodInit() {
+}
+
+function itemGroupClick(e) {
+    var itemPrice = $(e.target).closest('.itemPrice');
+    var autoid = itemPrice.attr("data-autoid");
+    var path = itemPrice.attr("data-path");
+    var level = itemPrice.attr("data-level");
+    app.navigate('views/getFood.html?autoid=' + autoid + '&path=' + path + '&level=' + level);
+}
+
+function getGroupFoodShow(e) {
+    var areaID = e.view.params.areaid;
+    
     currencyID = '1';
     levelgroup = 1;
     _branchID = 3;
@@ -23,13 +35,36 @@ $(function() {
                failure: function() {
                    alert("Load Data Failed");
                },
-               success: function(data) {
-                   var result = JSON.parse(data.d.Result);
-                   if (result.ITEMGROUP !== null) {
-                       getGroupFood = result.ITEMGROUP;
-                   } else {
-                       alert("Load Data Failed");
-                   }
-               }
+               success: getAllItemGroupSuccess
            })
-})
+}
+
+function getAllItemGroupSuccess(data) {
+    var result = JSON.parse(data.d.Result);
+    if (result.ITEMGROUP !== null) {
+        getGroupFood = result.ITEMGROUP;
+        
+        var dataSource = new kendo.data.DataSource({
+                                                       data: getGroupFood,
+                                                       pageSize: 20
+                                                   });
+                    
+        $("#pagerItemGroup").kendoPager({
+                                            dataSource: dataSource
+                                        });
+                    
+        $("#listviewItemGroup").kendoListView({
+                                                  dataSource: dataSource,
+                                                  template: kendo.template($("#templateItemGroup").html())
+                                              });
+        $(".itemPrice").click(function(e) {
+            itemGroupClick(e);
+        });
+        $(".itemPrice").children().click(function(e) {
+            e.stopPropagation();
+            itemGroupClick(e);
+        });
+    } else {
+        alert("Load Data Failed");
+    }
+}

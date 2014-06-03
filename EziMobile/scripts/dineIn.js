@@ -84,5 +84,6 @@ function tableClick(e) {
     var parentDiv = $(e.target).closest('.tableDiv');
     var autoid = parentDiv.attr("data-autoid");
     var defineid = parentDiv.attr("data-defineid");
-    app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid);
+    var areaid = $("#dropdownArea").val();
+    app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid + '&areaid=' + areaid);
 }
