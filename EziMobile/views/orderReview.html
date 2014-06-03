@@ -1,48 +1,37 @@
-<!-- Main Layout -->
-<div data-id="layoutMain" data-role="layout">
-    <div data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title">EziMobile</span>
-            <a data-rel="drawer" data-role="button" data-icon="more" data-align="right" href="#drawSide" data-transition="slide"></a>
-            <a data-role="backbutton" data-align="left">Back</a>
+<div id="viewOrderReview" data-role="view" data-title="Xem lại hóa đơn" data-layout="layoutMain" data-show="" data-init="">
+    <div class="viewContent">
+        <!-- TableInformation View -->
+        <div class="headBar">
+            <center>
+                Bàn: <span id="tableID"></span>
+            </center>
         </div>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>
+                    Số lượng khách:
+                    <input id="inputGuestQuantity" value="0" type="text" onclick="openModalViewGuestQuantity()"/>
+                </label>
+            </li>
+            <li>
+                <label>
+                    Mã thẻ vip
+                    <input id="txtVipCode" type="text"/>
+                </label>
+            </li>
+            <li>
+                <label>
+                    Nhóm Khách hàng
+                    <input id="dropdownCustomerGroup"/>
+                </label>
+            </li>
+        </ul>
+        <center>
+            <img src="styles/images/avatar.png" alt="" width="200" height="200">
+        </center>
+        <center>
+            <!--<img src="styles/images/btn-ok.png" alt="" width="50" height="50">-->
+            <button id="btnTableInformationSubmit" data-role="button">Continue</button>
+        </center>
     </div>
-
-    <div data-role="footer">
-        <div data-role="tabstrip">
-            <a data-icon="home" href="#viewHome">Home</a>
-            <a data-role="button" data-icon="settings" href="#settingsPopOver" data-rel="popover">Settings</a>
-            <a data-role="button" data-icon="globe">Notifications</a>
-            <a data-role="button" data-icon="contacts">Message</a>
-        </div>
-    </div>
 </div>
-
-<!-- TableInformation View -->
-<div id="viewOrderReview" data-role="view" data-layout="layoutMain" data-title="Xem lại hóa đơn">
-    <ul data-role="listview" data-style="inset">
-        <li>
-            <label>
-                Số lượng khách:
-                <input id="inputGuestQuantity" type="text" onclick="openModalViewGuestQuantity()"/>
-            </label>
-        </li>
-        <li>
-            <label>
-                Mã thẻ vip
-                <input id="txtVipCode" type="text"/>
-            </label>
-        </li>
-        <li>
-            <label>
-                Nhóm Khách hàng
-                <input id="dropdownCustomerGroup"/>
-            </label>
-        </li>
-
-    </ul>
-</div>
-<div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
-
-</div>
-
