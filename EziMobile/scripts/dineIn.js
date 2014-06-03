@@ -60,7 +60,7 @@ function loadTableGrid(e) {
                    var result = JSON.parse(data.d.Result);
                    if (result.CustomerTable !== null) {
                        var template = kendo.template(
-                           "<div class='tableDiv' data-autoid='#= RET_AUTOID #' >" +
+                           "<div class='tableDiv' data-autoid='#= RET_AUTOID #' data-defineid='#= RET_DEFINEID #' >" +
                            "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
                            "<div class='tableContent'> </div>" +
                            "</div>");
@@ -83,5 +83,6 @@ function loadTableGrid(e) {
 function tableClick(e) {
     var parentDiv = $(e.target).closest('.tableDiv');
     var autoid = parentDiv.attr("data-autoid");
-    app.navigate('views/tableInformation.html?autoid='+autoid);
+    var defineid = parentDiv.attr("data-defineid");
+    app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid);
 }
