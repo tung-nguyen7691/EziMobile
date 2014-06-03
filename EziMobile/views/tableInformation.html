@@ -1,12 +1,10 @@
 <div id="viewTableInformation" data-role="view" data-title="Thông tin bàn" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="viewTableInformationInit">
     <!-- TableInformation View -->
-    <div id="questQuantity">
-    </div>
     <ul data-role="listview" data-style="inset">
         <li>
             <label>
                 Số lượng khách:
-                <input id="inputGuestQuantity" type="text" onclick="openModalViewGuestQuantity()"/>
+                <input id="inputGuestQuantity" value="0" type="text" onclick="openModalViewGuestQuantity()"/>
             </label>
         </li>
         <li>
@@ -29,8 +27,8 @@
     <center>
         <img src="styles/images/btn-ok.png" alt="" width="50" height="50">
     </center>
-    <!-- GUest QUantity ModalView -->
-    <div id="modalguestquantity" data-role="modalview" data-width="85%" data-height="300" data-modal="true">
+    <!-- Guest QUantity ModalView -->
+    <div id="modalguestquantity" data-role="modalview" data-width="85%" data-height="290" data-modal="true">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Chọn loại khách</span>
@@ -42,23 +40,23 @@
             <li>
                 <label>
                     Nam
-                    <input value="0" type="number" min="0" id="edtmale" />
+                    <input value="0" type="number" min="0" id="edtmale" onchange="guestQuantityOnChange()" />
                 </label>
             </li>
             <li>
                 <label>
                     Nữ
-                    <input value="0" type="number" min="0" id="edtfemale" />
+                    <input value="0" type="number" min="0" id="edtfemale" onchange="guestQuantityOnChange()" />
                 </label>
             </li>
             <li>
                 <label>
                     Trẻ em
-                    <input value="0" type="number" min="0" id="edtchild"/>
+                    <input value="0" type="number" min="0" id="edtchild" onchange="guestQuantityOnChange()"/>
                 </label>
             </li>
         </ul>
-
-        <a data-role="button" data-click="closeModalViewGuestQuantity">Đồng ý</a>
+        <a data-role="button" class="popupButton" data-click="closeModalViewGuestQuantity">Đóng</a>
+    
     </div>
 </div>

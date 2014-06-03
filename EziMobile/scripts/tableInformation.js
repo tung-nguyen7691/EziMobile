@@ -5,16 +5,7 @@ function closeModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("close");
 }
 function viewTableInformationInit() {
-    $("#edtmale").kendoNumericTextBox({
-                                          spin: onSpin
-                                      });
-    $("#edtfemale").kendoNumericTextBox({
-                                            spin: onSpin
-                                        });
-    $("#edtchild").kendoNumericTextBox({
-                                           spin: onSpin
-                                       });
-    //$("#inputGuestQuantity").kendoNumericTextBox();
+    /*$("#inputGuestQuantity").kendoNumericTextBox();*/
     _langID = 2;
     _branchID = 3;
     
@@ -46,10 +37,11 @@ function viewTableInformationInit() {
            })
 }
 
-function onSpin() {
+function guestQuantityOnChange() {
     var male = parseInt($('#edtmale').val());
     var female = parseInt($('#edtfemale').val());
     var child = parseInt($("#edtchild").val());
+    
     var total = male + female + child;
     $("#inputGuestQuantity").val(total);
 }
