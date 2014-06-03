@@ -14,7 +14,7 @@ function tableInformationLoad() {
     $("#edtchild").kendoNumericTextBox({
                                            spin: onSpin
                                        });
-    $("#inputGuestQuantity").kendoNumericTextBox();
+    //$("#inputGuestQuantity").kendoNumericTextBox();
 }
 
 function onSpin() {
@@ -22,10 +22,10 @@ function onSpin() {
     var female = parseInt($('#edtfemale').val());
     var child = parseInt($("#edtchild").val());
     var total = male + female + child;
-    var txtGuestQuantity = $("#inputGuestQuantity").data("kendoNumericTextBox");
-    txtGuestQuantity.value(total);
+    $("#inputGuestQuantity").val(total);
 }
 
 function viewTableInformationShow(e) {
     $("#txtVipCode").val(e.view.params.autoid);
+    $("#txtCustomerGroup").val(e.view.params.autoid);
 }

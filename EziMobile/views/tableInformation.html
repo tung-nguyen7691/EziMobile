@@ -5,21 +5,23 @@
     <ul data-role="listview" data-style="inset">
         <li>
             <label>
+                Số lượng khách:
+                <input id="inputGuestQuantity" type="text" onclick="openModalViewGuestQuantity()"/>
+            </label>
+        </li>
+        <li>
+            <label>
                 Mã thẻ vip
-                <input id="txtVipCode" type="text" value="***" />
+                <input id="txtVipCode" type="text"/>
             </label>
         </li>
         <li>
             <label>
                 Nhóm Khách hàng
-                <input type="text" value="***" />
+                <input id="txtCustomerGroup" type="text"/>
             </label>
         </li>
-        <li>
-            <label>Số lượng khách:
-                <input type="text" onclick="openModalViewGuestQuantity()"/>
-            </label>
-        </li>
+
     </ul>
     <center>
         <img src="styles/images/avatar.png" alt="" width="200" height="200">
