@@ -15,6 +15,35 @@ function tableInformationLoad() {
                                            spin: onSpin
                                        });
     //$("#inputGuestQuantity").kendoNumericTextBox();
+    _langID = 2;
+    _branchID = 3;
+    
+    var dataRequest = {
+        branchID: _branchID,
+        langID: _langID,
+    };
+    $.ajax({
+               url: _webServicePath + 'getCustomerGroup',
+               type: "POST",
+               dataType: "json",
+               data: JSON.stringify(dataRequest),
+               contentType: "application/json; charset=utf-8",
+               failure: function() {
+                   alert("No Customer Group Found");
+               },
+               success: function(data) {
+                   var result = JSON.parse(data.d.Result);
+                   if (result.CustomerGroup !== null)
+                       $("#dropdownCustomerGroup").kendoDropDownList({
+                                                                         dataTextField: "POG_NAME",
+                                                                         dataValueField: "POG_AUTOID",
+                                                                         dataSource: result.CustomerGroup,
+                                                                         //select: loadTableGrid
+                                                                     });
+                   else
+                       alert("No Areas Found");
+               }
+           })
 }
 
 function onSpin() {
@@ -28,4 +57,6 @@ function onSpin() {
 function viewTableInformationShow(e) {
     $("#txtVipCode").val(e.view.params.autoid);
     $("#txtCustomerGroup").val(e.view.params.autoid);
+}
+function listViewCustomerGroup() {
 }
