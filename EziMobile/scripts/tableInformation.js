@@ -56,7 +56,4 @@ function onSpin() {
 
 function viewTableInformationShow(e) {
     $("#txtVipCode").val(e.view.params.autoid);
-    $("#txtCustomerGroup").val(e.view.params.autoid);
-}
-function listViewCustomerGroup() {
 }

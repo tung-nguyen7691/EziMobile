@@ -1,7 +1,8 @@
 <!-- TableInformation View -->
-<div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
+<div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món" data-show="viewTableGetFoodShow">
     <div>
-        <label>Bàn</label>
+        <label>Get Bàn</label>
+        <input id="txtautoid" type="text">
     </div>
     <div id="example">
 
@@ -10,16 +11,15 @@
 
         <script type="text/x-kendo-template" id="template">
             <div class="itemGroup">
-                <img src="styles/images/#= ITG_PARENTID #.jpg" alt="#: ITG_NAME # image" />
+                <img src="styles/images/1.jpg" alt="#: ITG_NAME # image" />
                 <h3>#:ITG_NAME#</h3>
-                <p id="itemPrice" data-id="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button" href="views/detailFood.html">#:kendo.toString(ITG_LEVEL, "c")#</p>
             </div>
         </script>
         <script>
             $(function() {
                 var dataSource = new kendo.data.DataSource({
                                                                data: getFood,
-                                                               pageSize: 15
+                                                               pageSize: 5
                                                            });
                     
                 $("#pager").kendoPager({
@@ -30,9 +30,12 @@
                                                  dataSource: dataSource,
                                                  template: kendo.template($("#template").html())
                                              });
-            });                    
+            });
+            function viewTableGetFoodShow(e) {
+                $("#txtautoid").val(e.view.params.autoid);
+            }
         </script>
-        
+
         <style scoped>
             .demo-section
             {
