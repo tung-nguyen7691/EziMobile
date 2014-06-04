@@ -101,4 +101,6 @@ function btnConfigClick() {
     bLoginConfigVisible = !bLoginConfigVisible;
 }
 
-var app = new kendo.mobile.Application();
+var app = new kendo.mobile.Application($(document.body),{
+    skin: "flat"
+});
