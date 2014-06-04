@@ -1,10 +1,13 @@
 var foodDetail;
 
 function getFoodDetailShow(e) {
-    var areaID = e.view.params.areaid;
+    //var areaID = e.view.params.areaid;
+    var areaID = 3;
     var currencyID = 3;
-    var parentGroupID = e.view.params.parentGroupID;
-    var key = e.view.params.key;
+    //var parentGroupID = e.view.params.parentGroupID;
+    var parentGroupID = 124;
+    //var key = e.view.params.key;
+    var key = '';
     _branchID = 3;
     _langID = 2;
     var dataRequest = {
@@ -41,8 +44,6 @@ function getFoodDetailSuccess(data) {
                                                    dataSource: dataSource,
                                                    template: kendo.template($("#templateFoodDetail").html())
                                                });
-        
-        getFood = result.ITEMGROUP;
     } else {
         alert("Load Data Failed");
     }
