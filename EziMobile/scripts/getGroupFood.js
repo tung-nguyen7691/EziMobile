@@ -49,7 +49,7 @@ function getAllItemGroupSuccess(data) {
         
         var dataSource = new kendo.data.DataSource({
                                                        data: getGroupFood,
-                                                       pageSize: 20
+                                                       pageSize: 10
                                                    });
                     
         $("#pagerItemGroup").kendoPager({
