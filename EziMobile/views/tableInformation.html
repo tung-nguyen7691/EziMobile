@@ -1,38 +1,39 @@
 <div id="viewTableInformation" data-role="view" data-title="Thông tin bàn" data-layout="layoutMain" data-show="viewTableInformationShow" data-init="viewTableInformationInit">
-    <div class="viewContent">
+    <div class="viewContainer">
         <!-- TableInformation View -->
-        <div class="headBar">
+        <div class="viewHeadBar">
             <center>
                 Bàn: <span id="tableID"></span>
             </center>
         </div>
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>
-                    Số lượng khách
-                    <input id="inputGuestQuantity" value="0" type="text" onclick="openModalViewGuestQuantity()"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Mã thẻ VIP
-                    <input id="txtVipCode" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Nhóm Khách hàng
-                    <input id="dropdownCustomerGroup"/>
-                </label>
-            </li>
-        </ul>
-        <center>
-            <img src="styles/images/avatar.png" alt="" width="200" height="200">
-        </center>
-        <center>
-            <!--<img src="styles/images/btn-ok.png" alt="" width="50" height="50">-->
-            <button id="btnTableInformationSubmit" data-role="button" data-click="btnTableInformationSubmitClick">Continue</button>
-        </center>
+        <div class="viewContent">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Số lượng khách
+                        <input id="inputGuestQuantity" value="0" type="text" onclick="openModalViewGuestQuantity()"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Mã thẻ VIP
+                        <input id="txtVipCode" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Nhóm Khách hàng
+                        <input id="dropdownCustomerGroup"/>
+                    </label>
+                </li>
+            </ul>
+            <center>
+                <img src="styles/images/avatar.png" alt="" width="200" height="200">
+            </center>
+            <center>
+                <button id="btnTableInformationSubmit" data-role="button" data-click="btnTableInformationSubmitClick">Continue</button>
+            </center>
+        </div>
         <!-- Guest QUantity ModalView -->
         <div id="modalguestquantity" data-role="modalview" data-width="85%" data-height="290" data-modal="true">
             <div data-role="header">
