@@ -1,6 +1,10 @@
-.km-view[data-role="view"] .km-content
+.mainButton
 {
-    padding: 15px;
+    width: 31%;
+    height: 100px;
+    border: none !important ;
+    background: none !important;
+    font-size: medium;
 }
 
 .mainButton img
@@ -40,41 +44,4 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
     background-color: White;
-}
-
-/*Android*/
-.km-android .mainButton
-{
-    width: 23%;
-    height: 90px;
-    border: none;
-    background: none;
-    color: Black;
-}
-
-/*Tablet*/
-.km-tablet .mainButton
-{
-    width: 27%;
-    height: 90px;
-    border: none;
-    background: none;
-    color: Black;
-}
-
-/*iOs*/
-.km-ios7 .mainButton
-{
-    width: 31%;
-    height: 90px;
-    border: none;
-    color: Black;
-}
-
-/*WP*/
-.km-wp .mainButton
-{
-    width: 25%;
-    height: 90px;
-    border: none;
 }
