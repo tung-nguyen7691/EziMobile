@@ -1,88 +1,15 @@
 <!-- TableInformation View -->
-<div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món" data-show="viewTableGetFoodShow">
-    <div>
-        <label>Get Bàn</label>
-        <input id="txtautoid" type="text">
-    </div>
+<div id="viewGetFood" data-role="view" data-layout="layoutMain" data-title="Chọn món" data-show="getFoodShow">
     <div id="example">
 
         <div id="listViewFood"></div>
         <div id="pager" class="k-pager-wrap"></div>
-        <script>
-            var getFood;
-            var autoid;
-            var path = 1;
-            var level = 1;
-            
-            function viewTableGetFoodShow(e) {
-                $("#txtautoid").val(e.view.params.level);
-                autoid = e.view.params.autoid;
-                path = e.view.params.path;
-                level = e.view.params.level;
-            }
-            
-            $(function() {
-                areaID = 1;
-                currencyID = 1;
-                parentGroupID = autoid;
-                parentGroupPath = path;
-                parentLevelGroup = level;
-                _branchID = 3;
-                _langID = 2;
-            
-                var dataRequest = {
-                    areaID: areaID,
-                    currencyID: currencyID,
-                    parentGroupID: parentGroupID,
-                    parentGroupPath: parentGroupPath,
-                    parentLevelGroup: parentLevelGroup,
-                    branchID: _branchID,
-                    langID: _langID
-                };
-                $.ajax({
-                           url: _webServicePath + "getGroupChildFromGroup",
-                           type: "POST",
-                           dataType: "json",
-                           data : JSON.stringify(dataRequest),
-                           contentType: "application/json; charset=utf-8",
-                           failure: function() {
-                               alert("Load Data Failed");
-                           },
-                           success: function(data) {
-                               var result = JSON.parse(data.d.Result);
-                               if (result.ITEMGROUP !== null) {
-                                   getFood = result.ITEMGROUP;
-                               } else {
-                                   alert("Load Data Failed");
-                               }
-                           }
-                       })
-            })</script>
         <script type="text/x-kendo-template" id="templateFood">
             <div class="itemGroup">
                 <img src="styles/images/1.jpg" alt="#: ITG_NAME # image" />
-                <h3>#:ITG_NAME#
-            
+                <h3>#:ITG_NAME#            
                 </h3>
             </div>
-        </script>
-        <script>
-            
-            $(function() {
-                var dataSource = new kendo.data.DataSource({
-                                                               data: getFood,
-                                                               pageSize: 5
-                                                           });
-            
-                $("#pager").kendoPager({
-                                           dataSource: dataSource
-                                       });
-            
-                $("#listViewFood").kendoListView({
-                                                     dataSource: dataSource,
-                                                     template: kendo.template($("#templateFood").html())
-                                                 });
-            });
         </script>
 
         <style scoped>

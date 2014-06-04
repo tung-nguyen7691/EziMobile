@@ -1,25 +1,19 @@
 var getFood;
-var autoid;
-var path;
-var level;
 
 function viewTableGetFoodShow(e) {
-    $("#txtautoid").val(e.view.params.path);
     autoid = e.view.params.autoid;
     path = e.view.params.path;
     level = e.view.params.level;
 }
 
-$(function() {
-    //alert(autoid);
-    areaID = 1;
+function getFoodShow(e) {
+    var areaID = e.view.params.areaid;
+    var parentGroupID = e.view.params.autoid;
+    var parentGroupPath = e.view.params.path;
+    var parentLevelGroup = e.view.params.level;
     currencyID = 1;
-    parentGroupID = 124;
-    parentGroupPath = '1;124';
-    parentLevelGroup = 1;
     _branchID = 3;
     _langID = 2;
-    
     var dataRequest = {
         areaID: areaID,
         currencyID: currencyID,
@@ -29,6 +23,7 @@ $(function() {
         branchID: _branchID,
         langID: _langID
     };
+    
     $.ajax({
                url: _webServicePath + "getGroupChildFromGroup",
                type: "POST",
@@ -38,13 +33,28 @@ $(function() {
                failure: function() {
                    alert("Load Data Failed");
                },
-               success: function(data) {
-                   var result = JSON.parse(data.d.Result);
-                   if (result.ITEMGROUP !== null) {
-                       getFood = result.ITEMGROUP;
-                   } else {
-                       alert("Load Data Failed");
-                   }
-               }
+               success: getAllItemFoodSuccess
            })
-})
+}
+function getAllItemFoodSuccess(data) {
+    var result = JSON.parse(data.d.Result);
+    if (result.ITEMGROUP !== null) {
+        getFood = result.ITEMGROUP;
+        
+        var dataSource = new kendo.data.DataSource({
+                                                       data: getFood,
+                                                       pageSize: 10
+                                                   });
+            
+        $("#pager").kendoPager({
+                                   dataSource: dataSource
+                               });
+            
+        $("#listViewFood").kendoListView({
+                                             dataSource: dataSource,
+                                             template: kendo.template($("#templateFood").html())
+                                         });
+    } else {
+        alert("Load Data Failed");
+    }
+}

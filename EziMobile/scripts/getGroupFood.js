@@ -1,19 +1,20 @@
 var getGroupFood;
+var areaID;
                     
 function getGroupFoodInit() {
 }
 
 function itemGroupClick(e) {
     var itemPrice = $(e.target).closest('.itemPrice');
+    //var areaid = e.view.params.areaid;
     var autoid = itemPrice.attr("data-autoid");
     var path = itemPrice.attr("data-path");
     var level = itemPrice.attr("data-level");
-    app.navigate('views/getFood.html?autoid=' + autoid + '&path=' + path + '&level=' + level);
+    app.navigate('views/getFood.html?areaid=' + areaID + '&autoid=' + autoid + '&path=' + path + '&level=' + level);
 }
 
 function getGroupFoodShow(e) {
-    var areaID = e.view.params.areaid;
-    
+    areaID = e.view.params.areaid;
     currencyID = '1';
     levelgroup = 1;
     _branchID = 3;
