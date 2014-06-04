@@ -48,7 +48,7 @@ function getAllItemFoodSuccess(data) {
                                                        pageSize: 10
                                                    });
             
-        $("#pager").kendoPager({
+        $("#pagerFood").kendoPager({
                                    dataSource: dataSource
                                });
             
