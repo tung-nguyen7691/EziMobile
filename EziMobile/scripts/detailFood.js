@@ -1,12 +1,10 @@
 var foodDetail;
 
 function getFoodDetailShow(e) {
-    //var areaID = e.view.params.areaid;
-    var areaID = 3;
+    var areaID = e.view.params.areaid;
     var currencyID = 3;
-    //var parentGroupID = e.view.params.autoid;
-    var parentGroupID = 124;
-    var key = '';
+    var parentGroupID = e.view.params.parentGroupID;
+    var key = e.view.params.key;
     _branchID = 3;
     _langID = 2;
     var dataRequest = {
@@ -14,7 +12,6 @@ function getFoodDetailShow(e) {
         currencyID: currencyID,
         parentGroupID: parentGroupID,
         key: key,
-        parentLevelGroup: parentLevelGroup,
         branchID: _branchID,
         langID: _langID
     };
@@ -35,7 +32,6 @@ function getFoodDetailSuccess(data) {
     var result = JSON.parse(data.d.Result);
     if (result.ITEMS !== null) {
         foodDetail = result.ITEMS;
-        alert(foodDetail);
         
         var dataSource = new kendo.data.DataSource({
                                                        data: foodDetail

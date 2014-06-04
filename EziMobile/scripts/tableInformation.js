@@ -1,4 +1,5 @@
 var areaid;
+var defineid;
 
 function openModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("open");
@@ -7,8 +8,6 @@ function closeModalViewGuestQuantity() {
     $("#modalguestquantity").kendoMobileModalView("close");
 }
 function viewTableInformationInit() {
-    
-    
     _langID = 2;
     _branchID = 3;
     
@@ -48,10 +47,11 @@ function guestQuantityOnChange() {
 }
 
 function viewTableInformationShow(e) {
-    $("#tableID").html(e.view.params.defineid);
+    defineid = e.view.params.defineid;
+    $("#tableID").html(defineid);
     areaid = e.view.params.areaid;
 }
 
-function btnTableInformationSubmitClick(){
-    app.navigate("views/getGroupFood.html?areaid="+areaid);
+function btnTableInformationSubmitClick() {
+    app.navigate("views/getGroupFood.html?areaid=" + areaid + '&defineid=' + defineid);
 }

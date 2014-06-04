@@ -1,5 +1,6 @@
 var getGroupFood;
 var areaID;
+var defineid;
                     
 function getGroupFoodInit() {
 }
@@ -14,6 +15,7 @@ function itemGroupClick(e) {
 }
 
 function getGroupFoodShow(e) {
+    $("#defineid").html(e.view.params.defineid);
     areaID = e.view.params.areaid;
     currencyID = '1';
     levelgroup = 1;

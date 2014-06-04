@@ -1,4 +1,6 @@
 var getFood;
+var areaID;
+var parentGroupID;
 
 function viewTableGetFoodShow(e) {
     autoid = e.view.params.autoid;
@@ -7,8 +9,8 @@ function viewTableGetFoodShow(e) {
 }
 
 function getFoodShow(e) {
-    var areaID = e.view.params.areaid;
-    var parentGroupID = e.view.params.autoid;
+    areaID = e.view.params.areaid;
+    parentGroupID = e.view.params.autoid;
     var parentGroupPath = e.view.params.path;
     var parentLevelGroup = e.view.params.level;
     currencyID = 1;
@@ -46,7 +48,7 @@ function getAllItemFoodSuccess(data) {
                                                        pageSize: 10
                                                    });
             
-        $("#pager").kendoPager({
+        $("#pagerFood").kendoPager({
                                    dataSource: dataSource
                                });
             
@@ -54,7 +56,19 @@ function getAllItemFoodSuccess(data) {
                                              dataSource: dataSource,
                                              template: kendo.template($("#templateFood").html())
                                          });
+        $(".itemNameFood").click(function(e) {
+            itemNameFoodClick(e);
+        });
+        $(".itemNameFood").children().click(function(e) {
+            e.stopPropagation();
+            itemNameFoodClick(e);
+        });
     } else {
         alert("Load Data Failed");
+    }
+    function itemNameFoodClick(e) {
+        var itemNameFood = $(e.target).closest('.itemNameFood');
+        var key = itemNameFood.attr("data-key");
+        app.navigate('views/detailFood.html?areaid=' + areaID + '&parentGroupID=' + parentGroupID + '&key=' + key);
     }
 }
