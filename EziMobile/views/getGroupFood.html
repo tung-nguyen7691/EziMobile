@@ -1,49 +1,19 @@
 <!-- TableInformation View -->
-<div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món">
+<div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món" data-init="getGroupFoodInit" data-show="getGroupFoodShow">
     <div>
         <label>Bàn</label>
     </div>
     <div id="example">
 
-        <div id="listView"></div>
-        <div id="pager" class="k-pager-wrap"></div>
+        <div id="listviewItemGroup"></div>
+        <div id="pagerItemGroup" class="k-pager-wrap"></div>
 
-        <script type="text/x-kendo-template" id="template">
+        <script type="text/x-kendo-template" id="templateItemGroup">
             <div class="itemGroup">
                 <img src="styles/images/#= ITG_PARENTID #.jpg" alt="#: ITG_NAME # image" />
                 <h3>#:ITG_NAME#</h3>
-                <p class="itemPrice" data-autoid="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
+                <p class="itemPrice" data-id="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
             </div>
-        </script>
-        <script>
-            $(function() {
-                var dataSource = new kendo.data.DataSource({
-                                                               data: getGroupFood,
-                                                               pageSize: 10
-                                                           });
-                    
-                $("#pager").kendoPager({
-                                           dataSource: dataSource
-                                       });
-                    
-                $("#listView").kendoListView({
-                                                 dataSource: dataSource,
-                                                 template: kendo.template($("#template").html())
-                                             });
-                $(".itemPrice").click(function(e) {
-                    itemFoodGroupClick(e);
-                });
-                $(".itemPrice").children().click(function(e) {
-                    e.stopPropagation();
-                });
-                function itemFoodGroupClick(e) {
-                    var itemPrice = $(e.target).closest('.itemPrice');
-                    var autoid = itemPrice.attr("data-autoid");
-                    var path = itemPrice.attr("data-path");
-                    var level = itemPrice.attr("data-level");
-                    app.navigate('views/getFood.html?autoid=' + autoid + '&path=' + path + '&level=' + level);
-                }
-            });                    
         </script>
 
         <style scoped>
@@ -121,11 +91,3 @@
         </style>
     </div>
 </div>
-<!-- Notification View -->
-<div id="viewNotification" data-role="view" data-layout="layoutMain" data-title="Notification">
-
-</div>
-<div id="message" data-role="view" data-layout="layoutMain" data-title="Message">
-
-</div>
-
