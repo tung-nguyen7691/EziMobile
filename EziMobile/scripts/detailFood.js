@@ -14,7 +14,6 @@ function getFoodDetailShow(e) {
         currencyID: currencyID,
         parentGroupID: parentGroupID,
         key: key,
-        parentLevelGroup: parentLevelGroup,
         branchID: _branchID,
         langID: _langID
     };
@@ -35,7 +34,6 @@ function getFoodDetailSuccess(data) {
     var result = JSON.parse(data.d.Result);
     if (result.ITEMS !== null) {
         foodDetail = result.ITEMS;
-        alert(foodDetail);
         
         var dataSource = new kendo.data.DataSource({
                                                        data: foodDetail
