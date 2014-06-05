@@ -1,94 +1,75 @@
 <!-- TableInformation View -->
 <div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món" data-init="getGroupFoodInit" data-show="getGroupFoodShow">
-    <div>
-        <label>Bàn</label>
-        <span id="defineid"></span>
-    </div>
-    <div id="example">
+    <div class="viewContainer">
+        <div class="viewHeadBar">
+            <label>
+                Bàn <span id="defineid"></span>
+            </label>
+        </div>
+        <div id="viewContent">
 
-        <div id="listviewItemGroup"></div>
-        <div id="pagerItemGroup" class="k-pager-wrap"></div>
+            <div id="listviewItemGroup"></div>
+            <div id="pagerItemGroup" class="k-pager-wrap"></div>
 
-        <script type="text/x-kendo-template" id="templateItemGroup">
-            <div class="itemGroup">
-                <img src="styles/images/#= ITG_PARENTID #.jpg" alt="#: ITG_NAME # image" />
-                <h3>#:ITG_NAME#</h3>
-                <p class="itemPrice" data-autoid="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
-            </div>
-        </script>
+            <script type="text/x-kendo-template" id="templateItemGroup">
+                <div class="itemGroup">
+                    <img src="styles/images/#= ITG_PARENTID #.jpg" />
+                    <h3>#:ITG_NAME#</h3>
+                    <p class="itemPrice" data-autoid="#= ITG_AUTOID #" data-path="#=ITG_PATH#" data-level="#=ITG_LEVEL#" data-role="button">#:kendo.toString(ITG_LEVEL, "c")#</p>
+                </div>
+            </script>
 
-        <style scoped>
-            .demo-section
-            {
-                width: 860px;
-                margin: 20px auto;
-                border: 0;
-                background: none;
-            }
-            #listviewItemGroup
-            {
-                padding: 10px 5px;
-                margin-bottom: -1px;
-                min-height: 510px;
-                background-color: White;
-            }
-            .itemGroup
-            {
-                float: left;
-                position: relative;
-                width: 111px;
-                height: 170px;
-                margin: 0 5px;
-                padding: 0;
-            }
-            .itemGroup img
-            {
-                width: 110px;
-                height: 110px;
-            }
-            .itemGroup h3
-            {
-                margin: 0;
-                padding: 3px 5px 0 0;
-                max-width: 96px;
-                overflow: hidden;
-                line-height: 1.1em;
-                font-size: .9em;
-                font-weight: normal;
-                text-transform: uppercase;
-                color: #999;
-            }
-            .itemGroup p
-            {
-                visibility: hidden;
-            }
-            .itemGroup:hover p
-            {
-                visibility: visible;
-                position: absolute;
-                width: 110px;
-                height: 110px;
-                top: 0;
-                margin: 0;
-                padding: 0;
-                line-height: 110px;
-                vertical-align: middle;
-                text-align: center;
-                color: #fff;
-                background-color: rgba(0, 0, 0, 0.75);
-                transition: background .2s linear, color .2s linear;
-                -moz-transition: background .2s linear, color .2s linear;
-                -webkit-transition: background .2s linear, color .2s linear;
-                -o-transition: background .2s linear, color .2s linear;
-            }
-            .k-listviewItemGroup:after
-            {
-                content: ".";
-                display: block;
-                height: 0;
-                clear: both;
-                visibility: hidden;
-            }
-        </style>
+            <style scoped>
+                .itemGroup
+                {
+                    float: left;
+                    position: relative;
+                    width: 111px;
+                    height: 170px;
+                    margin: 0 15px;
+                    padding: 0;
+                }
+                .itemGroup img
+                {
+                    width: 120px;
+                    height: 120px;
+                }
+                .itemGroup h3
+                {
+                    margin: 0;
+                    padding: 3px 5px 0 0;
+                    max-width: 96px;
+                    overflow: hidden;
+                    line-height: 1.1em;
+                    font-size: .9em;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    color: #999;
+                }
+                .itemGroup p
+                {
+                    visibility: hidden;
+                }
+                .itemGroup:hover p
+                {
+                    visibility: visible;
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 110px;
+                    vertical-align: middle;
+                    text-align: center;
+                    color: #fff;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    transition: background .2s linear, color .2s linear;
+                    -moz-transition: background .2s linear, color .2s linear;
+                    -webkit-transition: background .2s linear, color .2s linear;
+                    -o-transition: background .2s linear, color .2s linear;
+                }
+            </style>
+        </div>
     </div>
 </div>

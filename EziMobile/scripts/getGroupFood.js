@@ -11,6 +11,7 @@ function itemGroupClick(e) {
     var autoid = itemPrice.attr("data-autoid");
     var path = itemPrice.attr("data-path");
     var level = itemPrice.attr("data-level");
+    
     app.navigate('views/getFood.html?areaid=' + areaID + '&autoid=' + autoid + '&path=' + path + '&level=' + level);
 }
 
@@ -49,7 +50,7 @@ function getAllItemGroupSuccess(data) {
         
         var dataSource = new kendo.data.DataSource({
                                                        data: getGroupFood,
-                                                       pageSize: 20
+                                                       pageSize: 10
                                                    });
                     
         $("#pagerItemGroup").kendoPager({
