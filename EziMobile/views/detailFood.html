@@ -1,22 +1,16 @@
 <!-- TableInformation View -->
 <div id="viewDetailFood" data-role="view" data-layout="layoutMain" data-title="Thông tin món" data-show="getFoodDetailShow">
-    <div id="example" role="application">
-        <div class="demo-section k-header">
-            <div id="listViewFoodDetail">
-                <script type="text/x-kendo-template" id="templateFoodDetail">
-                    <div>
-                        <img src="styles/images/2.jpg" alt="image" />
-                        <div id="description">
-                            <h2>PIT_NAME</h2>
-                            <p>PIT_NAME_LANG</p>
-                            <div id="details-total">
-                                <p id="price-quantity" data-bind="text: price">PRICE</p>
-                                <button class="buy" data-bind="click: addToCart">Thêm món</button>
-                            </div>
-                        </div>
-                    </div>
-                </script>
+    <div id="listViewFoodDetail">
+        <script type="text/x-kendo-template" id="templateFoodDetail">
+            <img src="styles/images/1.jpg" alt="image" />
+            <div id="description">
+                <h2>PIT_NAME</h2>
+                <p>PIT_NAME_LANG</p>
+                <div>
+                    <p>PRICE</p>
+                    <button class="buy">Thêm món</button>
+                </div>
             </div>
-        </div>
+        </script>
     </div>
 </div>
