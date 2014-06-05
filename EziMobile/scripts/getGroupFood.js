@@ -15,6 +15,14 @@ function itemGroupClick(e) {
     app.navigate('views/getFood.html?areaid=' + areaID + '&autoid=' + autoid + '&path=' + path + '&level=' + level);
 }
 
+function btnOpenItemAcceptClick() {
+    $("#modalOpenItem").kendoMobileModalView("close");
+}
+
+function btnOpenItemCancelClick() {
+    $("#modalOpenItem").kendoMobileModalView("close");
+}
+
 function getGroupFoodShow(e) {
     $("#defineid").html(e.view.params.defineid);
     areaID = e.view.params.areaid;
@@ -23,6 +31,7 @@ function getGroupFoodShow(e) {
     _branchID = 3;
     _langID = 2;
     
+    //Get All Item Group
     var dataRequest = {
         areaID: areaID,
         currencyID: currencyID,
@@ -40,6 +49,60 @@ function getGroupFoodShow(e) {
                    alert("Load Data Failed");
                },
                success: getAllItemGroupSuccess
+           })
+    
+    //Get Open Item
+    var requestOpenItem = {
+        branchID: _branchID,
+        langID: _langID
+    };
+    $.ajax({
+               url: _webServicePath + "getOpenItem",
+               type: "POST",
+               dataType: "json",
+               data : JSON.stringify(requestOpenItem),
+               contentType: "application/json; charset=utf-8",
+               failure: function() {
+                   alert("Load Data Failed");
+               },
+               success: function(data) {
+                   var result = JSON.parse(data.d.Result);
+                   if (result.ITEMS !== null)
+                       $("#dropdownOpenItemCode").kendoDropDownList({
+                                                                        dataTextField: "PIT_NAME",
+                                                                        dataValueField: "PIT_AUTOID",
+                                                                        dataSource: result.ITEMS,
+                                                                    });
+                   else
+                       alert("No Open Item Found");
+               }
+           })
+    
+    //Get UOM
+    var requestUom = {
+        branchID: _branchID,
+        langID: _langID
+    };
+    $.ajax({
+               url: _webServicePath + "getUOM",
+               type: "POST",
+               dataType: "json",
+               data : JSON.stringify(requestUom),
+               contentType: "application/json; charset=utf-8",
+               failure: function() {
+                   alert("Load Data Failed");
+               },
+               success: function(data) {
+                   var result = JSON.parse(data.d.Result);
+                   if (result.UOM !== null)
+                       $("#dropdownOpenItemUom").kendoDropDownList({
+                                                                       dataTextField: "UOM_NAME",
+                                                                       dataValueField: "UOM_AUTOID",
+                                                                       dataSource: result.UOM,
+                                                                   });
+                   else
+                       alert("No UOM Found");
+               }
            })
 }
 
@@ -69,6 +132,6 @@ function getAllItemGroupSuccess(data) {
             itemGroupClick(e);
         });
     } else {
-        alert("Load Data Failed");
+        alert("Load Item Group Failed");
     }
 }

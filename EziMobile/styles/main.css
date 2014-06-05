@@ -1,3 +1,15 @@
+/*Màu nền cho Nút */
+.greenButton
+{
+    background-color: green !important;
+    color: white !important;
+}
+.darkredButton
+{
+    background-color: DarkRed !important; 
+    color: white !important;
+}
+/*Nút ở màn hình chính*/
 .mainButton
 {
     width: 31%;
@@ -6,13 +18,12 @@
     background: none !important;
     font-size: medium;
 }
-
 .mainButton img
 {
     width: 48px;
     height: 48px;
 }
-
+/*Nút ở cửa sổ popup (chiếm chiều ngang)*/
 .popupButton
 {
     display: block;
@@ -20,12 +31,31 @@
     margin: .6em .8em;
     font-size: 1.2em;
 }
+/*Nút ở các thanh công cụ*/
+.barButton
+{
+    -webkit-border-radius: 10 !important;
+    -moz-border-radius: 10 !important;
+    border-radius: 10px !important;
+    border-color: #ffffff !important;
+    border-width: 2px !important;
+    font-family: Arial;
+    font-size: 16px;
+    color: #00D8CC;
+    background: #ffffff !important;
+    text-decoration: none;
+}
+.barButton:active
+{
+    background: #00D8CC !important;
+}
 
+/*nội dung View */
 .viewContent
 {
     padding: 5px;
 }
-
+/*thanh công cụ trên đầu View */
 .viewHeadBar
 {
     border: solid 0px #000000;
@@ -36,9 +66,10 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: #00D8CC;
-    font-size: 30px;
+    font-size: 33px;
+    padding: 3px;
 }
-
+/* khung chứa View */
 .viewContainer
 {
     -moz-box-shadow: 10px 10px 5px #000000;
