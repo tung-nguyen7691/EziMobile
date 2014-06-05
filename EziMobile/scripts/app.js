@@ -2,7 +2,6 @@ var bLoginConfigVisible = false;
 
 document.addEventListener('deviceready', function() {
     /*$("#modalLogin").kendoMobileModalView("open");*/
-    $("#modalLogin").height(280);
     $("#listLoginOption").hide();
     branchDropDownInit();
 });
@@ -96,7 +95,7 @@ function btnConfigClick() {
     if (bLoginConfigVisible) {
         $("#modalLogin").height(280);
     } else {
-        $("#modalLogin").height(400);
+        $("#modalLogin").height(370);
     }
     bLoginConfigVisible = !bLoginConfigVisible;
 }

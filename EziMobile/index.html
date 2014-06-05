@@ -46,7 +46,7 @@
 
                     <span data-role="view-title">EziMobile</span>
 
-                    <a data-role="backbutton" data-align="left">Back</a>
+                    <a data-role="backbutton" data-align="left" data-icon="rewind">Back</a>
                 </div>
             </div>
 
@@ -79,10 +79,10 @@
         </div>
 
         <!-- Login ModalView -->
-        <div id="modalLogin" data-role="modalview" data-width="85%" data-height="400px">
+        <div id="modalLogin" data-role="modalview" data-width="75%" data-height="280px">
             <div data-role="header">
                 <div data-role="navbar">
-                    <span>Login</span>
+                    <span>Đăng nhập</span>
 
                 </div>
             </div>
@@ -90,31 +90,31 @@
             <ul data-role="listview">
                 <li>
                     <label>
-                        Username
+                        Tên đăng nhập
                         <input id="txtUsername" type="text" value="Username" />
                     </label>
                 </li>
                 <li>
                     <label>
-                        Password
+                        Mật khẩu
                         <input id="txtPassword" type="password" value="Password" />
                     </label>
                 </li>
             </ul>
 
-            <a id="btnLogin" data-role="button" class="popupButton" data-click="btnLoginClick">Login</a>
-            <a id="btnConfig" data-role="button" class="popupButton" data-click="btnConfigClick">Option</a>
+            <a id="btnLogin" data-role="button" class="popupButton" data-click="btnLoginClick">Đăng nhập</a>
+            <a id="btnConfig" data-role="button" class="popupButton" data-click="btnConfigClick">Tùy chọn</a>
 
             <ul id="listLoginOption" data-role="listview">
                 <li>
                     <label>
-                        Branch
+                        Chi nhánh
                         <input id="dropdownBranch" />
                     </label>
                 </li>
                 <li>
                     <label>
-                        Language
+                        Ngôn ngữ
                         <select id="dropdownLanguage"></select>
                     </label>
                 </li>

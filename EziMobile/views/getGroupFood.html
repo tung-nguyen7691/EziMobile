@@ -1,10 +1,12 @@
 <!-- TableInformation View -->
 <div id="viewGetGroupFood" data-role="view" data-layout="layoutMain" data-title="Chọn nhóm món" data-init="getGroupFoodInit" data-show="getGroupFoodShow">
+
     <div class="viewContainer">
         <div class="viewHeadBar">
             <label>
                 Bàn <span id="defineid"></span>
             </label>
+            <button style="float: right" id="btnOpenItem" data-role="button" class="barButton" data-rel="modalview" href="#modalOpenItem" >Món mở</button>
         </div>
         <div id="viewContent">
 
@@ -19,57 +21,115 @@
                 </div>
             </script>
 
-            <style scoped>
-                .itemGroup
-                {
-                    float: left;
-                    position: relative;
-                    width: 111px;
-                    height: 170px;
-                    margin: 0 15px;
-                    padding: 0;
-                }
-                .itemGroup img
-                {
-                    width: 120px;
-                    height: 120px;
-                }
-                .itemGroup h3
-                {
-                    margin: 0;
-                    padding: 3px 5px 0 0;
-                    max-width: 96px;
-                    overflow: hidden;
-                    line-height: 1.1em;
-                    font-size: .9em;
-                    font-weight: normal;
-                    text-transform: uppercase;
-                    color: #999;
-                }
-                .itemGroup p
-                {
-                    visibility: hidden;
-                }
-                .itemGroup:hover p
-                {
-                    visibility: visible;
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0;
-                    margin: 0;
-                    padding: 0;
-                    line-height: 110px;
-                    vertical-align: middle;
-                    text-align: center;
-                    color: #fff;
-                    background-color: rgba(0, 0, 0, 0.75);
-                    transition: background .2s linear, color .2s linear;
-                    -moz-transition: background .2s linear, color .2s linear;
-                    -webkit-transition: background .2s linear, color .2s linear;
-                    -o-transition: background .2s linear, color .2s linear;
-                }
-            </style>
         </div>
     </div>
+
+    <!-- Modal Open Item -->
+    <div id="modalOpenItem" data-role="modalview" data-width="75%" data-height="420" >
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Món mở</span>
+            </div>
+        </div>
+
+        <ul data-role="listview">
+            <li>
+                <label>
+                    Mã hàng
+                    <input id="dropdownOpenItemCode" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Tên hàng
+                    <input id="txtOpenItemName" type="text" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Số lượng
+                    <input id="numOpenItemQuan" type="number" min="1" value="1" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    ĐVT
+                    <input id="dropdownOpenItemUom" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Đơn giá
+                    <input id="numOpenItemPrice" type="number" min="1" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Tiền hàng
+                    <input id="numOpenItemTotal" type="number" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Yêu cầu thêm
+                    <input id="txtOpenItemExtra" type="text" />
+                </label>
+            </li>
+        </ul>
+        <center>
+            <a id="btnOpenItemAccept" data-role="button" class="greenButton" data-click="btnOpenItemAcceptClick">Đồng ý</a>
+            <a id="btnOpenItemCancel" data-role="button" class="darkredButton" data-click="btnOpenItemCancelClick">Bỏ qua</a>
+        </center>
+    </div>
+
+    <style scoped>
+        .itemGroup
+        {
+            float: left;
+            position: relative;
+            width: 111px;
+            height: 170px;
+            margin: 0 15px;
+            padding: 0;
+        }
+        .itemGroup img
+        {
+            width: 120px;
+            height: 120px;
+        }
+        .itemGroup h3
+        {
+            margin: 0;
+            padding: 3px 5px 0 0;
+            max-width: 96px;
+            overflow: hidden;
+            line-height: 1.1em;
+            font-size: .9em;
+            font-weight: normal;
+        }
+        .itemGroup p
+        {
+            visibility: hidden;
+        }
+        .itemGroup:hover p
+        {
+            visibility: visible;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            line-height: 110px;
+            vertical-align: middle;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.75);
+            transition: background .2s linear, color .2s linear;
+            -moz-transition: background .2s linear, color .2s linear;
+            -webkit-transition: background .2s linear, color .2s linear;
+            -o-transition: background .2s linear, color .2s linear;
+        }
+    </style>
+
 </div>
