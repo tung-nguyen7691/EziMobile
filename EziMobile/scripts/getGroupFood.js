@@ -117,7 +117,16 @@ function getAllItemGroupSuccess(data) {
                                                    });
                     
         $("#pagerItemGroup").kendoPager({
-                                            dataSource: dataSource
+                                            dataSource: dataSource,
+                                            change: function() {
+                                                $(".itemPrice").click(function(e) {
+                                                    itemGroupClick(e);
+                                                });
+                                                $(".itemPrice").children().click(function(e) {
+                                                    e.stopPropagation();
+                                                    itemGroupClick(e);
+                                                });
+                                            }
                                         });
                     
         $("#listviewItemGroup").kendoListView({
