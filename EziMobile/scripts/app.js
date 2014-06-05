@@ -1,7 +1,7 @@
 var bLoginConfigVisible = false;
 
 document.addEventListener('deviceready', function() {
-    $("#modalLogin").kendoMobileModalView("open");
+    /*$("#modalLogin").kendoMobileModalView("open");*/
     $("#listLoginOption").hide();
     branchDropDownInit();
 });
