@@ -1,17 +1,8 @@
-<div id="viewOrderReview" data-role="view" data-title="Xem lại Order" data-layout="layoutMain" data-show="getOrderReviewShow">
+<div id="viewReportReview" data-role="view" data-title="Xem phiếu" data-layout="layoutMain" data-show="reportReviewShow">
     <div class="viewContainer">
         <div class="viewHeadBar">
-            <button style="float: right" id="btnSendOrder" data-role="button" class="barButton" >Gửi order</button>
-            <button style="float: right" id="btnKeepOrder" data-role="button" class="barButton" >Giữ order</button>
-            <button style="float: right" id="btnDeleteItem" data-role="button" class="barButton" >Xóa món</button>
-            <button style="float: right" id="btnDeleteOrder" data-role="button" class="barButton" >Hủy order</button>
-            <button style="float: right" id="btnWaitTime" data-role="button" class="barButton" >TG Chờ</button>
-            <button style="float: right" id="btnExtraRequest" data-role="button" class="barButton" >YC Thêm</button>
-            <button style="float: right" id="btnSetModify" data-role="button" class="barButton" >Sửa hàng Set</button>
-            <button style="float: right" id="btnQuantityPrice" data-role="button" class="barButton" >SL và giá</button>
         </div>
         <div class="viewContent">
-            <!-- TableInformation View -->
             <ul data-role="listview" >
                 <li>
                     <label>
@@ -45,23 +36,30 @@
                 </li>
                 <li>
                     <label>
+                        Lần in:
+                        <input id="inputPrintTime" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
                         Khách hàng:
                         <input id="inputCustomer" type="text"/>
                     </label>
                 </li>
             </ul>
-            <div id="gridOrderView"></div>
-            <ul data-role="listview" >
-                <li>
-                    <label>
-                        Số lượng:
-                        <input id="inputQuantity" type="text"/>
-                    </label>
-                </li>
+            <div id="gridReportView"></div>
+            <ul data-role="listview">
                 <li>
                     <label>
                         Tiền hàng:
                         <input id="inputMoneyService" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Phí dịch vụ:
+                        <input id="inputServiceper" type="text"/>
+                        <input id="inputServiceValue" type="text"/>
                     </label>
                 </li>
                 <li>
@@ -78,7 +76,7 @@
                 </li>
                 <li>
                     <label>
-                        Thành tiền:
+                        Phải trả:
                         <input id="inputPaymentAmountValue" type="text"/>
                     </label>
                 </li>
