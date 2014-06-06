@@ -62,11 +62,11 @@ function loadTableGridAddItem(e) {
                        var template = kendo.template(
                            "<div class='tableDiv' data-autoid='#= RET_AUTOID #' data-defineid='#= RET_DEFINEID #' >" +
                            "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
-                           "<center><div class='tableInfo'>Thông tin</div></center>" +
+                           "<div class='tableInfo' style='background-color: yellow'>Thông tin" +
                            "<div class='tableFunctionIcon'>" +
                            "<img src='styles/images/icons/pen.png' height='37' width='37' class='tableOrderIcon'>" +
                            "<img src='styles/images/icons/info3.png' style='float: right'  height='37' width='37' class='tableInfoIcon'>" +
-                           "</div>" +
+                           "</div></div>" +
                            "</div>");
                        var displayData = kendo.render(template, result.Table); //render the template
                        $("#tableGridAddItem").html(displayData); //display the result
