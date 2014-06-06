@@ -22,11 +22,11 @@ function listViewAreaInitAddItem() {
                    var result = JSON.parse(data.d.Result);
                    if (result.RESAREA !== null)
                        $("#dropdownAreaAddItem").kendoDropDownList({
-                                                                dataTextField: "REA_NAME",
-                                                                dataValueField: "REA_AUTOID",
-                                                                dataSource: result.RESAREA,
-                                                                select: loadTableGridAddItem
-                                                            });
+                                                                       dataTextField: "REA_NAME",
+                                                                       dataValueField: "REA_AUTOID",
+                                                                       dataSource: result.RESAREA,
+                                                                       select: loadTableGridAddItem
+                                                                   });
                    else
                        alert("No Areas Found");
                }
@@ -59,15 +59,7 @@ function loadTableGridAddItem(e) {
                success: function(data) {
                    var result = JSON.parse(data.d.Result);
                    if (result.Table !== null) {
-                       var template = kendo.template(
-                           "<div class='tableDiv' data-autoid='#= RET_AUTOID #' data-defineid='#= RET_DEFINEID #' >" +
-                           "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
-                           "<div class='tableInfo' style='background-color: yellow'>Thông tin" +
-                           "<div class='tableFunctionIcon'>" +
-                           "<img src='styles/images/icons/pen.png' height='37' width='37' class='tableOrderIcon'>" +
-                           "<img src='styles/images/icons/info3.png' style='float: right'  height='37' width='37' class='tableInfoIcon'>" +
-                           "</div></div>" +
-                           "</div>");
+                       var template = kendo.template($("#tableTemplate").html());
                        var displayData = kendo.render(template, result.Table); //render the template
                        $("#tableGridAddItem").html(displayData); //display the result
                        //bind click event to table div and children
@@ -78,12 +70,12 @@ function loadTableGridAddItem(e) {
                            e.stopPropagation();
                            tableClickAddItem(e);
                        });
-                       $(".imgOrderReview").click(function(e) {
-                           imgOrderReviewClick(e);
+                       $(".tableInfoIcon").click(function(e) {
+                           tableInfoIconClick(e);
                        });
-                       $(".imgOrderReview").children().click(function(e) {
+                       $(".tableInfoIcon").children().click(function(e) {
                            e.stopPropagation();
-                           imgOrderReviewClick(e);
+                           tableInfoIconClick(e);
                        });
                    } else
                        alert("No Tables Found");
@@ -98,5 +90,6 @@ function tableClickAddItem(e) {
     var areaid = $("#dropdownAreaAddItem").val();
     app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid + '&areaid=' + areaid);
 }
-function imgOrderReviewClick(e) {
+function tableInfoIconClick(e) {
+    app.navigate('views/orderReview.html');
 }

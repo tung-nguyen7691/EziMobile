@@ -15,6 +15,24 @@
     </ul>
 
     <div id="tableGridAddItem">
-    
+
     </div>
+
+    <script id="tableTemplate" type="text/x-kendo-template">
+        <div class='tableDiv' data-autoid='#= RET_AUTOID #' data-defineid='#= RET_DEFINEID #' >
+            <center>
+                <div class='tableHeaderSelected'>#= RET_DEFINEID #</div>
+            </center>
+            <div class='tableInfo' style='background-color: white'>
+                <div>#= TIMEORDER # </div>
+                <div>#= RETK_PAYMENTAMOUNT # </div>
+                <div>#= OBJ_EMPLOYEECREATE # </div>
+                <div>#= RETK_CUSTOMERQUANTITY # </div>
+                <div class='tableFunctionIcon'>
+                    <img src='styles/images/icons/pen.png' height='37' width='37' class='tableOrderIcon'>
+                    <img src='styles/images/icons/info3.png' style='float: right'  height='37' width='37' class='tableInfoIcon' data-ticketid='#= RET_AUTOID #'>
+                </div>
+            </div>
+        </div>
+    </script>
 </div>
