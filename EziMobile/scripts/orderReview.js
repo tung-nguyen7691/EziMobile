@@ -80,7 +80,6 @@ function orderReviewSuccess(data) {
     } else {
         alert("Load Data Failed");
     }
-    console.log(data.d.MoneyService);
     $("#inputMoneyService").val(data.d.MoneyService);
     $("#inputServicePercent").val(data.d.ServicePercent);
     $("#inputServiceValue").val(data.d.ServiceValue);
