@@ -21,11 +21,11 @@ function listViewAreaInitAddItem() {
                success: function(data) {
                    var result = JSON.parse(data.d.Result);
                    if (result.RESAREA !== null)
-                       $("#dropdownArea").kendoDropDownList({
+                       $("#dropdownAreaAddItem").kendoDropDownList({
                                                                 dataTextField: "REA_NAME",
                                                                 dataValueField: "REA_AUTOID",
                                                                 dataSource: result.RESAREA,
-                                                                select: loadTableGrid
+                                                                select: loadTableGridAddItem
                                                             });
                    else
                        alert("No Areas Found");
@@ -33,7 +33,7 @@ function listViewAreaInitAddItem() {
            })
 }
 
-function loadTableGrid(e) {
+function loadTableGridAddItem(e) {
     //selected item
     var selectedItem = this.dataItem(e.item.index());
     var areaID = selectedItem.REA_AUTOID;
@@ -48,7 +48,7 @@ function loadTableGrid(e) {
         userID: _userID
     };
     $.ajax({
-               url: _webServicePath + 'getOpenTableAvalaible',
+               url: _webServicePath + 'getOpenTableHaveCustomer',
                type: "POST",
                dataType: "json",
                data: JSON.stringify(dataRequest),
@@ -69,7 +69,7 @@ function loadTableGrid(e) {
                            "</div>" +
                            "</div>");
                        var displayData = kendo.render(template, result.Table); //render the template
-                       $("#tableGrid").html(displayData); //display the result
+                       $("#tableGridAddItem").html(displayData); //display the result
                        //bind click event to table div and children
                        $(".tableHeaderSelected").click(function(e) {
                            tableClick(e);
@@ -95,7 +95,7 @@ function tableClick(e) {
     var parentDiv = $(e.target).closest('.tableHeaderSelected');
     var autoid = parentDiv.attr("data-autoid");
     var defineid = parentDiv.attr("data-defineid");
-    var areaid = $("#dropdownArea").val();
+    var areaid = $("#dropdownAreaAddItem").val();
     app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid + '&areaid=' + areaid);
 }
 function imgOrderReviewClick(e) {
