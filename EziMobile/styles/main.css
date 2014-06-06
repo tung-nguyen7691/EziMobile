@@ -76,6 +76,8 @@ a:active
     border-top-right-radius: 5px;
     background-color: #00D8CC;
     font-size: 33px;
+    font-weight: bold;
+    color: White;
     padding: 3px;
     height: 50px;
 }
