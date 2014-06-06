@@ -1,83 +1,96 @@
 <div id="viewOrderReview" data-role="view" data-title="Xem phiếu" data-layout="layoutMain" data-show="getOrderReviewShow">
-    <div class="viewContent">
-        <!-- TableInformation View -->
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>
-                    Bàn:
-                    <input id="inputResTable" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Phiếu:
-                    <input id="inputBillCode" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Số lượng khách:
-                    <input id="inputQuantityGuest" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Nhân viên lập:
-                    <input id="inputCreateBy" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Giờ vào:
-                    <input id="inputTimeIn" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Lần in:
-                    <input id="inputPrintTime" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Khách hàng:
-                    <input id="inputCustomer" type="text"/>
-                </label>
-            </li>
-        </ul>
-        <div id="gridOrderView"></div>
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <label>
-                    Tiền hàng:
-                    <input id="inputMoneyService" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Phí dịch vụ:
-                    <input id="inputServiceper" type="text"/>
-                    <input id="inputServiceValue" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Giảm giá:
-                    <input id="inputDiscount" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    VAT:
-                    <input id="inputVATAmountValue" type="text"/>
-                </label>
-            </li>
-            <li>
-                <label>
-                    Phải trả:
-                    <input id="inputPaymentAmountValue" type="text"/>
-                </label>
-            </li>
-        </ul>
+    <div class="viewContainer">
+        <div class="viewHeadBar">
+            <button style="float: right" id="btnSendOrder" data-role="button" class="barButton" >Gửi order</button>
+            <button style="float: right" id="btnKeepOrder" data-role="button" class="barButton" >Giữ order</button>
+            <button style="float: right" id="btnDeleteItem" data-role="button" class="barButton" >Xóa món</button>
+            <button style="float: right" id="btnDeleteOrder" data-role="button" class="barButton" >Hủy order</button>
+            <button style="float: right" id="btnWaitTime" data-role="button" class="barButton" >TG Chờ</button>
+            <button style="float: right" id="btnExtraRequest" data-role="button" class="barButton" >YC Thêm</button>
+            <button style="float: right" id="btnSetModify" data-role="button" class="barButton" >Sửa hàng Set</button>
+            <button style="float: right" id="btnQuantityPrice" data-role="button" class="barButton" >SL và giá</button>
+        </div>
+        <div class="viewContent">
+            <!-- TableInformation View -->
+            <ul data-role="listview" >
+                <li>
+                    <label>
+                        Bàn:
+                        <input id="inputResTable" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Phiếu:
+                        <input id="inputBillCode" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Số lượng khách:
+                        <input id="inputQuantityGuest" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Nhân viên lập:
+                        <input id="inputCreateBy" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Giờ vào:
+                        <input id="inputTimeIn" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Lần in:
+                        <input id="inputPrintTime" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Khách hàng:
+                        <input id="inputCustomer" type="text"/>
+                    </label>
+                </li>
+            </ul>
+            <div id="gridOrderView"></div>
+            <ul data-role="listview" >
+                <li>
+                    <label>
+                        Tiền hàng:
+                        <input id="inputMoneyService" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Phí dịch vụ:
+                        <input id="inputServiceper" type="text"/>
+                        <input id="inputServiceValue" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Giảm giá:
+                        <input id="inputDiscount" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        VAT:
+                        <input id="inputVATAmountValue" type="text"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Phải trả:
+                        <input id="inputPaymentAmountValue" type="text"/>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>
