@@ -48,7 +48,7 @@ function loadTableGrid(e) {
         userID: _userID
     };
     $.ajax({
-               url: _webServicePath + 'getOpenTable',
+               url: _webServicePath + 'getOpenTableAvalaible',
                type: "POST",
                dataType: "json",
                data: JSON.stringify(dataRequest),
@@ -58,31 +58,20 @@ function loadTableGrid(e) {
                },
                success: function(data) {
                    var result = JSON.parse(data.d.Result);
-                   if (result.CustomerTable !== null) {
+                   if (result.Table !== null) {
                        var template = kendo.template(
                            "<div class='tableDiv' data-autoid='#= RET_AUTOID #' data-defineid='#= RET_DEFINEID #' >" +
                            "<center><div class='tableHeaderSelected'>#= RET_DEFINEID #</div></center>" +
-                           "<center><div class='tableInfo'>Thông tin</div></center>" +
-                           "<div class='tableFunctionIcon'><img src='styles/images/pen.png' alt='' height='40' width='40' class='imgOrderReview'>" +
-                           "<img src='styles/images/pen.png' alt='' style='margin-left: 20px'  height='40' width='40' class='imgOrder'></div> " +
-                           "<div class='tableContent'> </div>" +
                            "</div>");
-                       var displayData = kendo.render(template, result.CustomerTable); //render the template
+                       var displayData = kendo.render(template, result.Table); //render the template
                        $("#tableGrid").html(displayData); //display the result
                        //bind click event to table div and children
-                       $(".tableHeaderSelected").click(function(e) {
+                       $(".tableDiv").click(function(e) {
                            tableClick(e);
                        });
-                       $(".tableHeaderSelected").children().click(function(e) {
+                       $(".tableDiv").children().click(function(e) {
                            e.stopPropagation();
                            tableClick(e);
-                       });
-                       $(".imgOrderReview").click(function(e) {
-                           imgOrderReviewClick(e);
-                       });
-                       $(".imgOrderReview").children().click(function(e) {
-                           e.stopPropagation();
-                           imgOrderReviewClick(e);
                        });
                    } else
                        alert("No Tables Found");
@@ -91,12 +80,9 @@ function loadTableGrid(e) {
 }
 
 function tableClick(e) {
-    var parentDiv = $(e.target).closest('.tableHeaderSelected');
+    var parentDiv = $(e.target).closest('.tableDiv');
     var autoid = parentDiv.attr("data-autoid");
     var defineid = parentDiv.attr("data-defineid");
     var areaid = $("#dropdownArea").val();
     app.navigate('views/tableInformation.html?autoid=' + autoid + '&defineid=' + defineid + '&areaid=' + areaid);
-}
-function imgOrderReviewClick(e) {
-    
 }

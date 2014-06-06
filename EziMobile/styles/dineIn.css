@@ -1,4 +1,5 @@
-.tableDiv {
+.tableDiv
+{
     display: inline-block;
     padding: 1px;
     margin: 1px;
@@ -10,12 +11,15 @@
     color: #2672EC;
 }
 
-.tableDiv .tableHeaderSelected{
+.tableDiv .tableHeaderSelected
+{
     background-color: #56C5FF;
     font-size: larger;
+    color: White;
 }
 
-.tableFunctionIcon {
+.tableFunctionIcon
+{
     position: relative;
-    top: 55px;
+    top: 53px;
 }
