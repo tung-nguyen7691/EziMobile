@@ -1,0 +1,21 @@
+.tableDiv {
+    display: inline-block;
+    padding: 1px;
+    margin: 1px;
+    width: 140px;
+    height: 140px;
+    background-color: White;
+    border: 3px solid #2672EC;
+    border-radius: 5px;
+    color: #2672EC;
+}
+
+.tableDiv .tableHeaderSelected{
+    background-color: #56C5FF;
+    font-size: larger;
+}
+
+.tableFunctionIcon {
+    position: relative;
+    top: 55px;
+}
