@@ -72,11 +72,11 @@ function loadTableGridAddItem(e) {
                        $("#tableGridAddItem").html(displayData); //display the result
                        //bind click event to table div and children
                        $(".tableHeaderSelected").click(function(e) {
-                           tableClick(e);
+                           tableClickAddItem(e);
                        });
                        $(".tableHeaderSelected").children().click(function(e) {
                            e.stopPropagation();
-                           tableClick(e);
+                           tableClickAddItem(e);
                        });
                        $(".imgOrderReview").click(function(e) {
                            imgOrderReviewClick(e);
@@ -91,8 +91,8 @@ function loadTableGridAddItem(e) {
            })
 }
 
-function tableClick(e) {
-    var parentDiv = $(e.target).closest('.tableHeaderSelected');
+function tableClickAddItem(e) {
+    var parentDiv = $(e.target).closest('.tableDiv');
     var autoid = parentDiv.attr("data-autoid");
     var defineid = parentDiv.attr("data-defineid");
     var areaid = $("#dropdownAreaAddItem").val();
